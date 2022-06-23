@@ -73,7 +73,7 @@ namespace seleniumtest
             
 
             browserStart("https://brokerage.qc.suntecktts.com/agents/login");
-            loginPage("ben.hall", "Qll2mm.08");
+            loginPage("-", "-");
             dropdownHandler("/html/body/header/nav/div/div/div[3]/ul/li[3]", "/html/body/header/nav/div/div/div[3]/ul/li[3]/ul/li[2]/a"); //navigation to the CreateTL form
             dropdownHandler("/html/body/div[2]/div[2]/form/div[2]/div[2]/div/div[1]/div[1]/div/div/span/span[1]/span/span[2]", "/html/body/span[2]/span/span[2]/ul/li[2]");
 
