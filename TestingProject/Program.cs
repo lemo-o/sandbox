@@ -93,7 +93,9 @@ namespace seleniumtest
 
             dropdownHandler("/html/body/div[2]/div[2]/form/div[6]/div[2]/div/div[2]/div/select", "/html/body/div[2]/div[2]/form/div[6]/div[2]/div/div[2]/div/select/option[2]"); //Method
 
-
+            //add a class for this later
+            var tempbutton = driver.FindElement(By.XPath("/html/body/div[2]/div[2]/form/div[9]/div/div/div[3]/button"));
+            tempbutton.Click();
 
 
 
