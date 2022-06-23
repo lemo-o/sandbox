@@ -59,10 +59,10 @@ namespace seleniumtest
         }
         static void loginPage(string login, string pw) //this can 100% be cleverer - current it's not "generalized" Past that, it lacks errorchecking
         {
-            var username = driver.FindElement(By.XPath("/html/body/div[1]/div/div/div/div/div/form/div[2]/input"));
+            var username = driver.FindElement(By.XPath("//*[@id='agent_login']"));
             username.SendKeys(login);
 
-            var password = driver.FindElement(By.XPath("/html/body/div[1]/div/div/div/div/div/form/div[3]/input"));
+            var password = driver.FindElement(By.XPath("//*[@id='agent_password']"));
             password.SendKeys(pw);
 
             password.Submit();
@@ -78,8 +78,8 @@ namespace seleniumtest
             dropdownHandler("/html/body/div[2]/div[2]/form/div[2]/div[2]/div/div[1]/div[1]/div/div/span/span[1]/span/span[2]", "/html/body/span[2]/span/span[2]/ul/li[2]");
 
             
-            dropdownHandler("/html/body/div[2]/div[2]/form/div[3]/div[2]/div/div[1]/div/div/div[1]/div/span", "/html/body/span[2]/span/span[2]/ul/li[2]"); //shipper
-            dropdownHandler("/html/body/div[2]/div[2]/form/div[3]/div[2]/div/div[2]/div/div/div[1]/div/span/span[1]/span/span[1]", "/html/body/span[2]/span/span[2]/ul/li[1]"); //consignnee
+            dropdownHandler("/html/body/div[2]/div[2]/form/div[3]/div[2]/div/div[1]/div/div/div[1]/div/span/span[1]/span/span[1]", "/html/body/span[2]/span/span[2]/ul/li"); //Fill the information manually using the textboxHandler - this is a "hacky" solution
+            dropdownHandler("/html/body/div[2]/div[2]/form/div[3]/div[2]/div/div[2]/div/div/div[1]/div/span/span[1]/span/span[1]", "/html/body/span[2]/span/span[2]/ul/li"); //consignnee
             textboxHandler("/html/body/div[2]/div[2]/form/div[3]/div[2]/div/div[1]/div/div/div[13]/div[1]/div/input", "6/24/2022"); //this should ideally use a function of Time
             textboxHandler("/html/body/div[2]/div[2]/form/div[3]/div[2]/div/div[2]/div/div/div[13]/div[1]/div/input", "6/24/2022"); //this too
             
@@ -87,6 +87,10 @@ namespace seleniumtest
             dropdownHandler("/html/body/div[2]/div[2]/form/div[4]/div[2]/div/div/div[1]/div[3]/div/span/span[1]/span", "/html/body/span[2]/span/span[2]/ul/li[1]"); //UoM, should be randomized for what is available in the dropdown
             textboxHandler("/html/body/div[2]/div[2]/form/div[4]/div[2]/div/div/div[1]/div[4]/div/input", "1"); //Description, should fill with random garbage
             textboxHandler("/html/body/div[2]/div[2]/form/div[4]/div[2]/div/div/div[1]/div[5]/div/input", "1"); //Weight, should fill with a random value 1-150,000
+
+            dropdownHandler("/html/body/div[2]/div[2]/form/div[5]/div[2]/div/div[1]/div/span/span[1]/span", "/html/body/span[2]/span/span[2]/ul/li[1]"); //Equipment Type
+
+            dropdownHandler("/html/body/div[2]/div[2]/form/div[6]/div[2]/div/div[2]/div/select", "/html/body/div[2]/div[2]/form/div[6]/div[2]/div/div[2]/div/select/option[2]"); //Method
 
 
 
