@@ -10,12 +10,9 @@ namespace seleniumTest
 {
     class working
     {
-        
         static void Main(string[] args)
         {
-
-            loadCreation.changethisname();
-
+            loadCreator.changethisname();
         }
 
     }

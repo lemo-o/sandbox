@@ -67,18 +67,15 @@ namespace TestingProject.Properties {
         ///using OpenQA.Selenium.Chrome;
         ///using OpenQA.Selenium.Interactions;
         ///
-        ///namespace seleniumTest
+        ///namespace seleniumTest //my next step is to change most of these to have correct private/public consolidation. Right now, everything is public, which is a terrible practice. 
         ///{
         ///    public class generalHandlers
         ///    {
-        ///        public static ChromeDriver driver;
+        ///        public ChromeDriver driver;
         ///
         ///        public void browserStart(string temp) //also navigates to page
         ///        {
-        ///            driver = new ChromeDriver();
-        ///            driver.Navigate().GoToUrl(temp);
-        ///            driver.Manage().Window.Maximize();
-        ///            //  d [rest of string was truncated]&quot;;.
+        ///         [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string generalHandlers {
             get {
@@ -95,18 +92,23 @@ namespace TestingProject.Properties {
         ///
         ///namespace seleniumTest
         ///{
-        ///    internal class loadCreation
+        ///    public class loadCreator
         ///    {
+        ///        //var constructor = new generalHandlers();
         ///
+        ///        public static void changethisname()
+        ///        {
+        ///            var constructor = new generalHandlers();
         ///
-        ///        browserStart(&quot;https://brokerage.qc.suntecktts.com/agents/login&quot;);
-        ///        constructor.loginPage(&quot;ben.hall&quot;, &quot;Qll2mm.08&quot;);
-        ///        constructor.dropdownHandler(&quot;/html/body/header/nav/div/div/div[3]/ul/li[3]&quot;, &quot;/html/body/header/nav/div/div/div[3]/ul/li[3]/ul/li[2]/a&quot;); //navigation to the CreateTL form
-        ///      [rest of string was truncated]&quot;;.
+        ///            constructor.browserStart(&quot;https://brokerage.qc.suntecktts.com/agents/login&quot;);
+        ///
+        ///            constructor.loginPage(&quot;-&quot;, &quot;-&quot;);
+        ///
+        ///            constr [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string loadCreater {
+        internal static string loadCreator {
             get {
-                return ResourceManager.GetString("loadCreater", resourceCulture);
+                return ResourceManager.GetString("loadCreator", resourceCulture);
             }
         }
         

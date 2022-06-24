@@ -121,8 +121,8 @@
   <data name="generalHandlers" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\generalHandlers.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="loadCreater" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\loadCreater.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="loadCreator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loadCreator.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="locationDefinitions" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\locationDefinitions.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
