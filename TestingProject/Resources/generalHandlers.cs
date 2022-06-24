@@ -4,11 +4,27 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 
-namespace seleniumTest //my next step is to change most of these to have correct private/public consolidation. Right now, everything is public, which is a terrible practice. 
+namespace seleniumTest //my next step is to change most of these to have correct private/public consolidation. 
 {
+
+    //private class gHconstructor
+
     public class generalHandlers
     {
-        public ChromeDriver driver;
+        public generalHandlers();
+            :base()
+            {
+            public ChromeDriver driver;
+    }
+
+        
+        
+            //return driver;
+     
+        //private  constructor;
+        //public abstract generalHandlers()
+        //    : base();
+        //public ChromeDriver driver;
 
         public void browserStart(string temp) //also navigates to page
         {
