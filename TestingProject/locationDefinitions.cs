@@ -39,7 +39,7 @@ namespace seleniumtest
 			cityBlocks [2,1] =  "OK",
 			cityBlocks [3,1] =  "United States",
 			cityBlocks [4,1] =  "US",
-			cityBlocks [5,1] =  "73116",
+			cityBlocks [5,1] =  "73116"
 		}; //If I was doing more than two locations, I would make this loop in such a way that I can enter: "Boise", "Idaho", "ID", "United States", "US", "83701" and let a function handle it
 
     }
