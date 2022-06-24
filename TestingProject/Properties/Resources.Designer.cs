@@ -88,6 +88,30 @@ namespace TestingProject.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///using System.Linq;
+        ///using System.Text;
+        ///using System.Threading.Tasks;
+        ///
+        ///namespace seleniumTest
+        ///{
+        ///    internal class loadCreation
+        ///    {
+        ///
+        ///
+        ///        browserStart(&quot;https://brokerage.qc.suntecktts.com/agents/login&quot;);
+        ///        constructor.loginPage(&quot;ben.hall&quot;, &quot;Qll2mm.08&quot;);
+        ///        constructor.dropdownHandler(&quot;/html/body/header/nav/div/div/div[3]/ul/li[3]&quot;, &quot;/html/body/header/nav/div/div/div[3]/ul/li[3]/ul/li[2]/a&quot;); //navigation to the CreateTL form
+        ///      [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string loadCreater {
+            get {
+                return ResourceManager.GetString("loadCreater", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///
         ///namespace seleniumtest
         ///{
