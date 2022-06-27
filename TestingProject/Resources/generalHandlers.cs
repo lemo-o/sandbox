@@ -7,55 +7,43 @@ using OpenQA.Selenium.Interactions;
 namespace seleniumTest //my next step is to change most of these to have correct private/public consolidation. 
 {
 
-    //private class gHconstructor
+    
 
     public class generalHandlers
     {
-        public generalHandlers();
-            :base()
-            {
-            public ChromeDriver driver;
-    }
+        public generalHandlers() { }
 
-        
-        
-            //return driver;
-     
-        //private  constructor;
-        //public abstract generalHandlers()
-        //    : base();
-        //public ChromeDriver driver;
 
         public void browserStart(string temp) //also navigates to page
         {
-            driver = new ChromeDriver();
-            driver.Navigate().GoToUrl(temp);
-            driver.Manage().Window.Maximize();
+            //driver = new Chrome().Driver;
+            Chrome.Driver().Navigate().GoToUrl(temp);
+            Chrome.Driver().Manage().Window.Maximize();
             //  driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(500);
         }
         public void dropdownHandler(string x, string y /*, string l2, string l3 */) //input the xml for a dropdown and their respective codes 
         {
-            Actions action = new Actions(driver);
+            Actions action = new Actions(Chrome.Driver());
 
-            var dropdown = driver.FindElement(By.XPath(x));
+            var dropdown = Chrome.Driver().FindElement(By.XPath(x));
 
             action.MoveToElement(dropdown).Perform(); //xpath doesn't work for something reason? use the id - ID doesn't work? It's probably a clicking box; therefore, click the box, then check for xpath again
             try
             {
-                var level_1 = driver.FindElement(By.XPath(y));
+                var level_1 = Chrome.Driver().FindElement(By.XPath(y));
                 level_1.Click();
             }
             catch
             {
                 try
                 {
-                    var level_1 = driver.FindElement(By.Id(y));
+                    var level_1 = Chrome.Driver().FindElement(By.Id(y));
                     level_1.Click();
                 }
                 catch
                 {
                     dropdown.Click();
-                    var level_1 = driver.FindElement(By.XPath(y));
+                    var level_1 = Chrome.Driver().FindElement(By.XPath(y));
                     level_1.Click();
                 }
             }
@@ -70,15 +58,15 @@ namespace seleniumTest //my next step is to change most of these to have correct
         }
         public void textboxHandler(string location, string text) //this section needs errorchecking
         {
-            var temp = driver.FindElement(By.XPath(location));
+            var temp = Chrome.Driver().FindElement(By.XPath(location));
             temp.SendKeys(text);
         }
         public void loginPage(string login, string pw) //this can 100% be cleverer - current it's not "generalized" Past that, it lacks errorchecking
         {
-            var username = driver.FindElement(By.XPath("//*[@id='agent_login']"));
+            var username = Chrome.Driver().FindElement(By.XPath("//*[@id='agent_login']"));
             username.SendKeys(login);
 
-            var password = driver.FindElement(By.XPath("//*[@id='agent_password']"));
+            var password = Chrome.Driver().FindElement(By.XPath("//*[@id='agent_password']"));
             password.SendKeys(pw);
 
             password.Submit();
@@ -86,10 +74,10 @@ namespace seleniumTest //my next step is to change most of these to have correct
         public void buttonHandler(string location)
         {
             //add a class for this later
-            var tempbutton = driver.FindElement(By.XPath(location));
+            var tempbutton = Chrome.Driver().FindElement(By.XPath(location));
             tempbutton.Click();
 
-            driver.Close();
+            Chrome.Driver().Close();
         }
     }
 }

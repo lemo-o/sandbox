@@ -86,6 +86,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\browserStarts.cs" />
     <Compile Include="Resources\loadCreator.cs" />
     <Compile Include="Resources\generalHandlers.cs" />
   </ItemGroup>

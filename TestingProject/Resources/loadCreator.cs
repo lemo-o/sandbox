@@ -20,16 +20,17 @@ namespace seleniumTest
     //}
 
     //private generalHandlers(); 
-    new generalHandlers();
 
-    public class loadCreator 
+    public class loadCreator
     {
 
-        public static void changethisname()
+        generalHandlers constructor = new generalHandlers();
+
+        public void changethisname()
         {
             
 
-            generalHandlers.browserStart("https://brokerage.qc.suntecktts.com/agents/login");
+            constructor.browserStart("https://brokerage.qc.suntecktts.com/agents/login");
             constructor.loginPage("ben.hall", "Qll2mm.08");
 
             constructor.dropdownHandler("/html/body/header/nav/div/div/div[3]/ul/li[3]", "/html/body/header/nav/div/div/div[3]/ul/li[3]/ul/li[2]/a"); //navigation to the CreateTL form
@@ -47,9 +48,9 @@ namespace seleniumTest
 
             constructor.dropdownHandler("/html/body/div[2]/div[2]/form/div[6]/div[2]/div/div[2]/div/select", "/html/body/div[2]/div[2]/form/div[6]/div[2]/div/div[2]/div/select/option[2]"); //Method
 
-            constructor.buttonHandler("/html/body/div[2]/div[2]/form/div[9]/div/div/div[3]/button"); //submitbutton
+            
         }
-        private static void customer()
+        private void customer()
         {
             var constructor = new generalHandlers();
 
@@ -60,7 +61,40 @@ namespace seleniumTest
 
         }
 
+        private void shipper()
+        {
 
+        }
+
+        private void consignee()
+        {
+
+        }
+
+        private void shipmentCommodity()
+        {
+
+        }
+
+        private void equipmentRequirements()
+        {
+
+        }
+
+        private void distance()
+        {
+
+        }
+
+        private void custLH_and_Fuel()
+        {
+
+        }
+
+        private void buttonHandling()
+        {
+            constructor.buttonHandler("/html/body/div[2]/div[2]/form/div[9]/div/div/div[3]/button"); //submitbutton
+        }
         //browserStart("https://brokerage.qc.suntecktts.com/agents/login");
         //constructor.loginPage("ben.hall", "Qll2mm.08");
         //constructor.dropdownHandler("/html/body/header/nav/div/div/div[3]/ul/li[3]", "/html/body/header/nav/div/div/div[3]/ul/li[3]/ul/li[2]/a"); //navigation to the CreateTL form
