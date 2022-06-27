@@ -67,15 +67,47 @@ namespace TestingProject.Properties {
         ///using OpenQA.Selenium.Chrome;
         ///using OpenQA.Selenium.Interactions;
         ///
-        ///namespace seleniumTest //my next step is to change most of these to have correct private/public consolidation. Right now, everything is public, which is a terrible practice. 
+        ///namespace seleniumTest
         ///{
+        ///    public class openChrome
+        ///    {
+        ///        public void startChrome()
+        ///        {
+        ///            object driver = new ChromeDriver();
+        ///        }
+        ///    }
+        ///}.
+        /// </summary>
+        internal static string browserStarts {
+            get {
+                return ResourceManager.GetString("browserStarts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using Microsoft.VisualStudio.TestTools.UnitTesting;
+        ///using OpenQA.Selenium;
+        ///using OpenQA.Selenium.Chrome;
+        ///using OpenQA.Selenium.Interactions;
+        ///
+        ///namespace seleniumTest //my next step is to change most of these to have correct private/public consolidation. 
+        ///{
+        ///
+        ///    //private class gHconstructor
+        ///
         ///    public class generalHandlers
         ///    {
-        ///        public ChromeDriver driver;
+        ///        //public generalHandlers()
+        ///        //{
         ///
-        ///        public void browserStart(string temp) //also navigates to page
-        ///        {
-        ///         [rest of string was truncated]&quot;;.
+        ///        //}
+        ///        startChrome();
+        ///
+        ///        //return driver;
+        ///
+        ///        //private  constructor;
+        ///    [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string generalHandlers {
             get {
@@ -92,19 +124,22 @@ namespace TestingProject.Properties {
         ///
         ///namespace seleniumTest
         ///{
-        ///    public class loadCreator
-        ///    {
-        ///        //var constructor = new generalHandlers();
+        ///    //abstract class whatamIdoing
+        ///    //{
+        ///    //    public abstract void generalHandlers();
         ///
-        ///        public static void changethisname()
-        ///        {
-        ///            var constructor = new generalHandlers();
+        ///    //}   
+        ///    //class editor : whatamIdoing
+        ///    //{
+        ///    //    public override void generalHandlers()
+        ///    //    {
+        ///    //        var constructor = new generalHandlers();
+        ///    //    }
+        ///    //}
         ///
-        ///            constructor.browserStart(&quot;https://brokerage.qc.suntecktts.com/agents/login&quot;);
+        ///    //private generalHandlers(); 
         ///
-        ///            constructor.loginPage(&quot;-&quot;, &quot;-&quot;);
-        ///
-        ///            constr [rest of string was truncated]&quot;;.
+        ///    public class loadCreator  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string loadCreator {
             get {
