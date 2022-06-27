@@ -31,21 +31,22 @@ namespace seleniumTest
 			"Zahra Curry",
 			"Millie-Rose Pruitt"
 			};
+
 			private string[] address1 =
 			{
 			"123 America Street",
 			"9576 West W Emerald St", //Quality Logic Boise
 			"4045 NW 64th St" //Quality Logic OKC
 			};
+
 			private string[] address2 =
 			{
 			"Suite 120",
 			"Literally Words",
 			"This can be anything"
 			};
-		//I have a feel ~may~ have to be a 3x3 array, or just done cleverly. At least the states have to be tied to zips, and then probably the cities too
 
-		private string[][] city_Blocks = new string[][]{
+			private string[][] city_Blocks = new string[][]{ //If I was doing more than two locations, I would make this loop in such a way that I can enter: "Boise", "Idaho", "ID", "United States", "US", "83701" and let a function handle it
                 new string[]
 				{              
 				"Boise",
@@ -65,10 +66,6 @@ namespace seleniumTest
 				"US",
 				"73116"
 				}
-
 			};
-
-//If I was doing more than two locations, I would make this loop in such a way that I can enter: "Boise", "Idaho", "ID", "United States", "US", "83701" and let a function handle it
-
 		}
 }
