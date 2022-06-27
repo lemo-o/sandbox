@@ -26,12 +26,11 @@ namespace seleniumTest
 
         generalHandlers constructor = new generalHandlers();
 
-        public void changethisname()
+        public void changethisname() //this entire section needs to get moved into functions
         {
             
-
             constructor.browserStart("https://brokerage.qc.suntecktts.com/agents/login");
-            constructor.loginPage("ben.hall", "Qll2mm.08");
+            constructor.loginPage("=", "=");
 
             constructor.dropdownHandler("/html/body/header/nav/div/div/div[3]/ul/li[3]", "/html/body/header/nav/div/div/div[3]/ul/li[3]/ul/li[2]/a"); //navigation to the CreateTL form
 
