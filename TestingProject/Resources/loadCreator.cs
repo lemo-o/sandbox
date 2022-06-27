@@ -17,27 +17,19 @@ namespace seleniumTest
         public void changethisname() //this entire section needs to get moved into functions
         {
             navigation();
-
             customer();
-
             shipper();
-
             consignee();
-
             shipmentCommodity();
-
             equipmentRequirements();
-
             distance();
-
             constructor.buttonHandler("/html/body/div[2]/div[2]/form/div[9]/div/div/div[3]/button");
-            
         }
 
         private void navigation() 
         {
             constructor.browserStart("https://brokerage.qc.suntecktts.com/agents/login");
-            constructor.loginPage("ben.hall", "Qll2mm.08");
+            constructor.loginPage("-", "-");
 
             constructor.dropdownHandler("/html/body/header/nav/div/div/div[3]/ul/li[3]/a", "/html/body/header/nav/div/div/div[3]/ul/li[3]/ul/li[2]/a"); 
         }

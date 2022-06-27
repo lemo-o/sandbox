@@ -12,11 +12,8 @@ namespace seleniumTest
     {
         static void Main(string[] args)
         {
-            var temp = new loadCreator();
-
-            temp.changethisname();
-           
+            var c = new loadCreator();
+            c.changethisname();
         }
-
     }
 }
