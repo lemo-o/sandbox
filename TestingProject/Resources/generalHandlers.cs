@@ -54,9 +54,27 @@ namespace seleniumTest //my next step is to change most of these to have correct
         }
         public void textboxHandler(string location, string text) //this section needs errorchecking
         {
-            var temp = Chrome.Driver().FindElement(By.XPath(location));
-            temp.SendKeys(text);
+            try
+            {
+                var temp = Chrome.Driver().FindElement(By.XPath(location));
+                temp.Clear();
+                temp.SendKeys(text);
+            }
+            catch
+            {
+                Chrome.Driver().Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(1500);
+                var temp = Chrome.Driver().FindElement(By.XPath(location));
+                temp.Clear();
+                temp.SendKeys(text);
+            }
         }
+
+        public void textboxHandler(string location) //presumes that it just wants the textbox cleared with no text entered
+        {
+            var temp = Chrome.Driver().FindElement(By.XPath(location));
+            temp.Clear();
+        }
+
         public void loginPage(string login, string pw) //This section needs to take the xpath for the buttons/textboxes for the login
         {
             var username = Chrome.Driver().FindElement(By.XPath("//*[@id='agent_login']"));
