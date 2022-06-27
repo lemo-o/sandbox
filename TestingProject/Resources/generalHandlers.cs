@@ -12,7 +12,6 @@ namespace seleniumTest //my next step is to change most of these to have correct
 
         public void browserStart(string temp) //also navigates to page
         {
-            //driver = new Chrome().Driver;
             Chrome.Driver().Navigate().GoToUrl(temp);
             Chrome.Driver().Manage().Window.Maximize();
             //  driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(500);
