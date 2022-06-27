@@ -6,13 +6,9 @@ using OpenQA.Selenium.Interactions;
 
 namespace seleniumTest //my next step is to change most of these to have correct private/public consolidation. 
 {
-
-    
-
     public class generalHandlers
     {
-        public generalHandlers() { }
-
+        public generalHandlers() { } //constructor
 
         public void browserStart(string temp) //also navigates to page
         {
@@ -21,13 +17,13 @@ namespace seleniumTest //my next step is to change most of these to have correct
             Chrome.Driver().Manage().Window.Maximize();
             //  driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(500);
         }
-        public void dropdownHandler(string x, string y /*, string l2, string l3 */) //input the xml for a dropdown and their respective codes 
+        public void dropdownHandler(string x, string y /*, string l2, string l3 */) //input the xpath for a dropdown and their respective codes 
         {
             Actions action = new Actions(Chrome.Driver());
 
             var dropdown = Chrome.Driver().FindElement(By.XPath(x));
 
-            action.MoveToElement(dropdown).Perform(); //xpath doesn't work for something reason? use the id - ID doesn't work? It's probably a clicking box; therefore, click the box, then check for xpath again
+            action.MoveToElement(dropdown).Perform(); //logic is this: xpath doesn't work for something reason? use the id - ID doesn't work? It's probably a clicking box; therefore, click the box, then check for xpath again
             try
             {
                 var level_1 = Chrome.Driver().FindElement(By.XPath(y));
@@ -61,7 +57,7 @@ namespace seleniumTest //my next step is to change most of these to have correct
             var temp = Chrome.Driver().FindElement(By.XPath(location));
             temp.SendKeys(text);
         }
-        public void loginPage(string login, string pw) //this can 100% be cleverer - current it's not "generalized" Past that, it lacks errorchecking
+        public void loginPage(string login, string pw) //This section needs to take the xpath for the buttons/textboxes for the login
         {
             var username = Chrome.Driver().FindElement(By.XPath("//*[@id='agent_login']"));
             username.SendKeys(login);
