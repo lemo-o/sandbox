@@ -69,14 +69,16 @@ namespace TestingProject.Properties {
         ///
         ///namespace seleniumTest
         ///{
-        ///    public class openChrome
+        ///    public class Chrome
         ///    {
-        ///        public void startChrome()
+        ///        private static IWebDriver _driver;
+        ///
+        ///        public static IWebDriver Driver() //singleton method - this is terrible for multiple-browser tests
         ///        {
-        ///            object driver = new ChromeDriver();
-        ///        }
-        ///    }
-        ///}.
+        ///            if (_driver == null)
+        ///            {
+        ///
+        ///                //var service = ChromeDriverService.CreateDefaultService(); [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string browserStarts {
             get {
@@ -93,25 +95,45 @@ namespace TestingProject.Properties {
         ///
         ///namespace seleniumTest //my next step is to change most of these to have correct private/public consolidation. 
         ///{
-        ///
-        ///    //private class gHconstructor
-        ///
         ///    public class generalHandlers
-        ///    {
-        ///        //public generalHandlers()
-        ///        //{
+        ///    { 
         ///
-        ///        //}
-        ///        startChrome();
+        ///        public generalHandlers() { } //constructor
         ///
-        ///        //return driver;
-        ///
-        ///        //private  constructor;
-        ///    [rest of string was truncated]&quot;;.
+        ///        public void browserStart(string temp) //also navigates to page
+        ///        {
+        ///            Chrome.Driver().Navigate().GoToUrl(temp); [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string generalHandlers {
             get {
                 return ResourceManager.GetString("generalHandlers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using Microsoft.VisualStudio.TestTools.UnitTesting;
+        ///using OpenQA.Selenium;
+        ///using OpenQA.Selenium.Chrome;
+        ///using OpenQA.Selenium.Interactions;
+        ///
+        ///namespace seleniumTest
+        ///{
+        ///    public class loadCreator
+        ///    {
+        ///
+        ///        generalHandlers constructor = new generalHandlers();
+        ///        locationDefinitions definitions = new locationDefinitions();
+        ///
+        ///        public loadCreator() { }
+        ///
+        ///        public void changethisname() //this entire section needs to get moved into functions
+        ///        {
+        ///          [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string loadCreator {
+            get {
+                return ResourceManager.GetString("loadCreator", resourceCulture);
             }
         }
         
@@ -124,53 +146,18 @@ namespace TestingProject.Properties {
         ///
         ///namespace seleniumTest
         ///{
-        ///    //abstract class whatamIdoing
-        ///    //{
-        ///    //    public abstract void generalHandlers();
-        ///
-        ///    //}   
-        ///    //class editor : whatamIdoing
-        ///    //{
-        ///    //    public override void generalHandlers()
-        ///    //    {
-        ///    //        var constructor = new generalHandlers();
-        ///    //    }
-        ///    //}
-        ///
-        ///    //private generalHandlers(); 
-        ///
-        ///    public class loadCreator  [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string loadCreator {
-            get {
-                return ResourceManager.GetString("loadCreator", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to using System;
-        ///
-        ///namespace seleniumtest
-        ///{
-        ///	public class generalDefinitions
-        ///	{
-        ///		public string[] names = //I guess I could also pull these from a file, but this is just as practical
+        ///		public class locationDefinitions
         ///		{
-        ///			&quot;John Denver&quot;,
-        ///			&quot;Lottery Winner&quot;,
-        ///			&quot;Barrack Obama&quot;,
-        ///			&quot;Donald Trump&quot;
-        ///		};
-        ///		public string[] address1 =
-        ///		{
-        ///			&quot;123 America Street&quot;,
-        ///			&quot;9576 West W Emerald St&quot;, //Quality Logic Boise
-        ///			&quot;4045 NW 64th St&quot; //Quality Logic OKC
-        ///		};
-        ///		public string[] address2 =
-        ///		{
-        ///			&quot;Suite 120&quot;,
-        ///			&quot;Literally Words&quot;, [rest of string was truncated]&quot;;.
+        ///			Random rand = new Random();
+        ///			public string[] randomizedItems;
+        ///
+        ///			public locationDefinitions() //constructor
+        ///			{
+        ///				string[] randomizedItems = {
+        ///				names[rand.Next(names.Length)],
+        ///				address1[rand.Next(address1.Length)],
+        ///				address2[rand.Next(address2.Length)],
+        ///				city_Blocks[rand.Next(5),rand.Next(2 [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string locationDefinitions {
             get {

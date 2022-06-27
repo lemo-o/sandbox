@@ -7,7 +7,8 @@ using OpenQA.Selenium.Interactions;
 namespace seleniumTest //my next step is to change most of these to have correct private/public consolidation. 
 {
     public class generalHandlers
-    {
+    { 
+
         public generalHandlers() { } //constructor
 
         public void browserStart(string temp) //also navigates to page
@@ -68,11 +69,10 @@ namespace seleniumTest //my next step is to change most of these to have correct
         }
         public void buttonHandler(string location)
         {
-            //add a class for this later
             var tempbutton = Chrome.Driver().FindElement(By.XPath(location));
             tempbutton.Click();
 
-            Chrome.Driver().Close();
+            //Chrome.Driver().Close();
         }
     }
 }
