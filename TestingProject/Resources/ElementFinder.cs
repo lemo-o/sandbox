@@ -17,8 +17,7 @@ namespace Selenium
         
         public ChromeFinder()
         {
-            _findElement = new Driver().FindElement();
-            //_findElement = new Chrome.Driver().FindElement();
+            _findElement = Chrome.Driver().FindElement(By.XPath("sample")); //how do you pass the stuff thru?
         }
 
         public override object FindElement()

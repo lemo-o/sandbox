@@ -6,6 +6,8 @@ using OpenQA.Selenium.Interactions;
 
 namespace Selenium //my next step is to change most of these to have correct private/public consolidation. 
 {
+
+
     public class GeneralHandlers
     { 
         public GeneralHandlers() { } //constructor
