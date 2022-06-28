@@ -4,7 +4,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 
-namespace seleniumTest //my next step is to change most of these to have correct private/public consolidation. 
+namespace Selenium //my next step is to change most of these to have correct private/public consolidation. 
 {
     public class GeneralHandlers
     { 
@@ -16,29 +16,33 @@ namespace seleniumTest //my next step is to change most of these to have correct
             Chrome.Driver().Manage().Window.Maximize();
             //  driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(500);
         }
-        public void DropdownHandler(string x, string y /*, string l2, string l3 */) //input the xpath for a dropdown and their respective codes 
+        public void IDDropdownHandler(string _id1, string _id2)
+        {
+
+        }
+        public void XDropdownHandler(string _xPath1, string _xPath2 /*, string l2, string l3 */) //input the xpath for a dropdown and their respective codes 
         {
             Actions action = new Actions(Chrome.Driver());
 
-            var dropdown = Chrome.Driver().FindElement(By.XPath(x));
+            var dropdown = Chrome.Driver().FindElement(By.XPath(_xPath1));
 
             action.MoveToElement(dropdown).Perform(); //logic is this: xpath doesn't work for something reason? use the id - ID doesn't work? It's probably a clicking box; therefore, click the box, then check for xpath again
             try
             {
-                var level_1 = Chrome.Driver().FindElement(By.XPath(y));
+                var level_1 = Chrome.Driver().FindElement(By.XPath(_xPath2));
                 level_1.Click();
             }
             catch
             {
                 try
                 {
-                    var level_1 = Chrome.Driver().FindElement(By.Id(y));
+                    var level_1 = Chrome.Driver().FindElement(By.Id(_xPath2));
                     level_1.Click();
                 }
                 catch
                 {
                     dropdown.Click();
-                    var level_1 = Chrome.Driver().FindElement(By.XPath(y));
+                    var level_1 = Chrome.Driver().FindElement(By.XPath(_xPath2));
                     level_1.Click();
                 }
             }

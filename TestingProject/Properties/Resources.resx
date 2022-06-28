@@ -121,6 +121,9 @@
   <data name="browserStarts" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\browserStarts.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="DriverLogic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DriverLogic.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="generalHandlers" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\generalHandlers.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>

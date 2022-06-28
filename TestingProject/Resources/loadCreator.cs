@@ -4,7 +4,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 
-namespace seleniumTest
+namespace Selenium
 {
     public class LoadCreator
     {
@@ -31,7 +31,7 @@ namespace seleniumTest
         private void _navigation() 
         {
             constructor.BrowserStart("https://brokerage.qc.suntecktts.com/agents/login");
-            constructor.LoginPage("-", "-");
+            constructor.LoginPage("ben.hall", "Qll2mm.08");
             constructor.DropdownHandler("/html/body/header/nav/div/div/div[3]/ul/li[3]/a", "/html/body/header/nav/div/div/div[3]/ul/li[3]/ul/li[2]/a"); 
         }
 
@@ -62,7 +62,7 @@ namespace seleniumTest
         {
             constructor.TextboxHandler("/html/body/div[2]/div[2]/form/div[4]/div[2]/div/div/div[1]/div[2]/div/input", _rand.Next(1, 25).ToString()); //quantity
             constructor.DropdownHandler("/html/body/div[2]/div[2]/form/div[4]/div[2]/div/div/div[1]/div[3]/div/span/span[1]/span", "/html/body/span[2]/span/span[2]/ul/li[1]"); // UoM this should be made random
-            constructor.TextboxHandler("/html/body/div[2]/div[2]/form/div[4]/div[2]/div/div/div[1]/div[4]/div/input", "placeholder text"); //this can probably just use some random combination of the randomizedItems array
+            constructor.TextboxHandler("/html/body/div[2]/div[2]/form/div[4]/div[2]/div/div/div[1]/div[4]/div/input", "US 670 3' x 900' (300sy - 2,700sf) 6 158.00 948.00"); //this can probably just use some random combination of the randomizedItems array
             constructor.TextboxHandler("/html/body/div[2]/div[2]/form/div[4]/div[2]/div/div/div[1]/div[5]/div/input", _rand.Next(1,150000).ToString()); //Weight
         }
         private void _equipmentRequirements() 

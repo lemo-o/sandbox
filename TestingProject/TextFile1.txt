@@ -1,4 +1,4 @@
-Singlestons are garbo for cross-browser and paralell testing
+Singlestons are garbo for cross-browser and parallel testing
 	*Useful for Android testing to handle state
 	Make a factory to output and handle drivers as needed
 
@@ -8,6 +8,8 @@ Singlestons are garbo for cross-browser and paralell testing
 	No snake_case - I like snake_case :(
 
 Clean up white space
+
+Use fewer try/catches in general
 
 Nested Try/Catch blocks are "not great"
 	Build more general handler methods
@@ -19,6 +21,10 @@ Nested Try/Catch blocks are "not great"
 
 General Driver logic should be handled in a class dedicated to it
 	Call FindElement() via an abstracted, parent class instead of directly in the handlers
+	^^^^^^^^^^
+	General Driver logic should be handled in a class dedicated to it. That is to say, you 
+	can call FindElement() via an abstracted, parent class or something instead of directly 
+	in the handlers.
 
 Single letter variables are something to avoid
 	Use them for loops or a var in a lambda, but only that

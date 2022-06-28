@@ -67,18 +67,18 @@ namespace TestingProject.Properties {
         ///using OpenQA.Selenium.Chrome;
         ///using OpenQA.Selenium.Interactions;
         ///
-        ///namespace seleniumTest
-        ///{
-        ///    public class Chrome
-        ///    {
-        ///        private static IWebDriver _driver;
+        ///namespace Selenium
+        /////{
+        /////    public class Chrome
+        /////    {
+        /////        private static IWebDriver _driver;
         ///
-        ///        public static IWebDriver Driver() //singleton method - this is terrible for multiple-browser tests
-        ///        {
-        ///            if (_driver == null)
-        ///            {
+        /////        public static IWebDriver Driver() //singleton method - this is terrible for multiple-browser tests
+        /////        {
+        /////            if (_driver == null)
+        /////            {
         ///
-        ///                //var service = ChromeDriverService.CreateDefaultService(); [rest of string was truncated]&quot;;.
+        /////                //var service = ChromeDriverService.Creat [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string browserStarts {
             get {
@@ -93,16 +93,48 @@ namespace TestingProject.Properties {
         ///using OpenQA.Selenium.Chrome;
         ///using OpenQA.Selenium.Interactions;
         ///
-        ///namespace seleniumTest //my next step is to change most of these to have correct private/public consolidation. 
+        ///namespace Selenium
         ///{
-        ///    public class generalHandlers
-        ///    { 
+        ///    abstract class DriverLogic
+        ///    {
+        ///        public abstract IWebDriver Driver();
+        ///    }
         ///
-        ///        public generalHandlers() { } //constructor
+        ///    class General:DriverLogic 
+        ///    {
+        ///        private IWebDriver _driver;
         ///
-        ///        public void browserStart(string temp) //also navigates to page
+        ///        public General(IWebDriver driver)
         ///        {
-        ///            Chrome.Driver().Navigate().GoToUrl(temp); [rest of string was truncated]&quot;;.
+        ///            _driver = driver;
+        ///        }
+        ///
+        ///        public override IWebDriver Driver()
+        ///         [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string DriverLogic {
+            get {
+                return ResourceManager.GetString("DriverLogic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using Microsoft.VisualStudio.TestTools.UnitTesting;
+        ///using OpenQA.Selenium;
+        ///using OpenQA.Selenium.Chrome;
+        ///using OpenQA.Selenium.Interactions;
+        ///
+        ///namespace Selenium //my next step is to change most of these to have correct private/public consolidation. 
+        ///{
+        ///    public class GeneralHandlers
+        ///    { 
+        ///        public GeneralHandlers() { } //constructor
+        ///
+        ///        public void BrowserStart(string temp) //also navigates to page
+        ///        {
+        ///            Chrome.Driver().Navigate().GoToUrl(temp);
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string generalHandlers {
             get {
@@ -117,19 +149,22 @@ namespace TestingProject.Properties {
         ///using OpenQA.Selenium.Chrome;
         ///using OpenQA.Selenium.Interactions;
         ///
-        ///namespace seleniumTest
+        ///namespace Selenium
         ///{
-        ///    public class loadCreator
+        ///    public class LoadCreator
         ///    {
         ///
-        ///        generalHandlers constructor = new generalHandlers();
-        ///        locationDefinitions definitions = new locationDefinitions();
+        ///        GeneralHandlers constructor = new GeneralHandlers();
+        ///        Random _rand = new Random();
         ///
-        ///        public loadCreator() { }
+        ///        public LoadCreator() { }
         ///
-        ///        public void changethisname() //this entire section needs to get moved into functions
+        ///        public void ChangeThisName() 
         ///        {
-        ///          [rest of string was truncated]&quot;;.
+        ///            _navigation();
+        ///            _customer();
+        ///            _shipper();
+        ///            _cons [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string loadCreator {
             get {
@@ -144,20 +179,16 @@ namespace TestingProject.Properties {
         ///using System.Text;
         ///using System.Threading.Tasks;
         ///
-        ///namespace seleniumTest
+        ///namespace Selenium
         ///{
-        ///		public class locationDefinitions
+        ///		public class LocationDefinitions
         ///		{
         ///			Random rand = new Random();
-        ///			public string[] randomizedItems;
+        ///			public string[] RandomizedItems = new string[5]; // this should &quot;interface&quot; better - maybe use something like the factory method? Is this the factory method? I don&apos;t knwo, I need to look hahaha
         ///
-        ///			public locationDefinitions() //constructor
+        ///			public LocationDefinitions() //constructor, but a more classic usage
         ///			{
-        ///				string[] randomizedItems = {
-        ///				names[rand.Next(names.Length)],
-        ///				address1[rand.Next(address1.Length)],
-        ///				address2[rand.Next(address2.Length)],
-        ///				city_Blocks[rand.Next(5),rand.Next(2 [rest of string was truncated]&quot;;.
+        ///			Randomi [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string locationDefinitions {
             get {

@@ -4,28 +4,26 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 
-namespace seleniumTest
+namespace Selenium
 {
-    public class Chrome
+    abstract class ElementFinder
     {
-        private static IWebDriver _driver;
+        public abstract object FindElement(); //i have no idea if this is correct
+    }
 
-        public static IWebDriver Driver() //singleton method - this is terrible for multiple-browser tests
+    class ChromeFinder : ElementFinder //does it need to be chrome? I don't ~think~ so
+    {
+        private object _findElement;
+        
+        public ChromeFinder()
         {
-            if (_driver == null)
-            {
+            _findElement = new Driver().FindElement();
+            //_findElement = new Chrome.Driver().FindElement();
+        }
 
-                //var service = ChromeDriverService.CreateDefaultService();
-                //service.HideCommandPromptWindow = true;
-
-                //var options = new ChromeOptions();
-                //options.AddArguments("--headless");
-
-                //var commandTimeout = TimeSpan.FromSeconds(30);
-
-                _driver = new ChromeDriver(/*service, options, commandTimeout*/);
-            }
-            return _driver;
+        public override object FindElement()
+        {
+            return _findElement;
         }
     }
 }
