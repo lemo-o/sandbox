@@ -85,7 +85,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Resources\browserStarts.cs" />
+    <Compile Include="Resources\ElementFinder.cs" />
     <Compile Include="Resources\DriverLogic.cs" />
     <Compile Include="Resources\locationDefinitions.cs" />
     <Compile Include="Resources\loadCreator.cs" />
