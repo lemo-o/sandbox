@@ -6,12 +6,12 @@ using OpenQA.Selenium.Interactions;
 
 namespace seleniumTest
 {
-    class working
+    class Working
     {
         static void Main(string[] args)
         {
-            var c = new loadCreator();
-            c.changethisname();
+            var _loadConstructor = new LoadCreator();
+            _loadConstructor.ChangeThisName();
         }
     }
 }

@@ -2,7 +2,7 @@ Singlestons are garbo for cross-browser and paralell testing
 	*Useful for Android testing to handle state
 	Make a factory to output and handle drivers as needed
 
-Case Standardization:
+~~Case Standardization: 
 	PascalCase for methods, namespaces, classes, and public variables
 	_camelCase for private variables
 	No snake_case - I like snake_case :(

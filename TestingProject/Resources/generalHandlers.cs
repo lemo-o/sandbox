@@ -6,18 +6,17 @@ using OpenQA.Selenium.Interactions;
 
 namespace seleniumTest //my next step is to change most of these to have correct private/public consolidation. 
 {
-    public class generalHandlers
+    public class GeneralHandlers
     { 
+        public GeneralHandlers() { } //constructor
 
-        public generalHandlers() { } //constructor
-
-        public void browserStart(string temp) //also navigates to page
+        public void BrowserStart(string temp) //also navigates to page
         {
             Chrome.Driver().Navigate().GoToUrl(temp);
             Chrome.Driver().Manage().Window.Maximize();
             //  driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(500);
         }
-        public void dropdownHandler(string x, string y /*, string l2, string l3 */) //input the xpath for a dropdown and their respective codes 
+        public void DropdownHandler(string x, string y /*, string l2, string l3 */) //input the xpath for a dropdown and their respective codes 
         {
             Actions action = new Actions(Chrome.Driver());
 
@@ -52,7 +51,7 @@ namespace seleniumTest //my next step is to change most of these to have correct
 
             //this will probably need a pretty good waiting strategy. As of now, I wait implicitly in the main section of the code
         }
-        public void textboxHandler(string location, string text) //this section needs errorchecking
+        public void TextboxHandler(string location, string text) //this section needs errorchecking
         {
             try
             {
@@ -69,13 +68,13 @@ namespace seleniumTest //my next step is to change most of these to have correct
             }
         }
 
-        public void textboxHandler(string location) //presumes that it just wants the textbox cleared with no text entered
+        public void TextboxHandler(string location) //presumes that it just wants the textbox cleared with no text entered
         {
             var temp = Chrome.Driver().FindElement(By.XPath(location));
             temp.Clear();
         }
 
-        public void loginPage(string login, string pw) //This section needs to take the xpath for the buttons/textboxes for the login
+        public void LoginPage(string login, string pw) //This section needs to take the xpath for the buttons/textboxes for the login
         {
             var username = Chrome.Driver().FindElement(By.XPath("//*[@id='agent_login']"));
             username.SendKeys(login);
@@ -85,7 +84,7 @@ namespace seleniumTest //my next step is to change most of these to have correct
 
             password.Submit();
         }
-        public void buttonHandler(string location)
+        public void ButtonHandler(string location)
         {
             var tempbutton = Chrome.Driver().FindElement(By.XPath(location));
             tempbutton.Click();
