@@ -1,0 +1,40 @@
+Singlestons are garbo for cross-browser and paralell testing
+	*Useful for Android testing to handle state
+	Make a factory to output and handle drivers as needed
+
+Case Standardization:
+	PascalCase for methods, namespaces, classes, and public variables
+	_camelCase for private variables
+	No snake_case - I like snake_case :(
+
+Clean up white space
+
+Nested Try/Catch blocks are "not great"
+	Build more general handler methods
+	-or-
+	Split logic into other methods
+
+	Try WebDriverWait
+	Try and Catch statements tend to be really similar. This can probably be avoided. 
+
+General Driver logic should be handled in a class dedicated to it
+	Call FindElement() via an abstracted, parent class instead of directly in the handlers
+
+Single letter variables are something to avoid
+	Use them for loops or a var in a lambda, but only that
+
+Use the ID first, then XPath
+
+YOU CAN SHORTEN XPATHS WHAT
+	in hindsight that makes a lotta sense
+	credit to 
+
+No hard waits	
+	Make system.sleeps deterministic
+
+public string[] randomizedItems = new string[5]; 
+	Change to: public List<string> List<string>();
+
+Names, Urls, or any constant should be stored in it's own file
+	Goodbye locationDefinitions! you were a great idea!
+	Hello locationHandler! You rise from the ashes!
