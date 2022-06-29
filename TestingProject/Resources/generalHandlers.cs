@@ -6,18 +6,41 @@ using OpenQA.Selenium.Interactions;
 
 namespace Selenium //my next step is to change most of these to have correct private/public consolidation. 
 {
+    public class _compost
+    {
+        private By _locator;
 
+    }
 
-    public class GeneralHandlers
-    { 
-        public GeneralHandlers() { } //constructor
+    class ParentComponent : _compost
+    {
+        public ParentComponent()
+        {
 
+        }
+
+        public IWebElement FindElement()
+        {
+            return WaitForElement();
+        }
+
+        public IWebElement WaitForElement()
+        {
+            return new WebDriverWait(Driver())
+        }
         public void BrowserStart(string temp) //also navigates to page
         {
             Chrome.Driver().Navigate().GoToUrl(temp);
             Chrome.Driver().Manage().Window.Maximize();
             //  driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(500);
         }
+    }
+
+    public class GeneralHandlers
+    { 
+        public GeneralHandlers() { } //constructor
+
+        
         public void IDDropdownHandler(string _id1, string _id2)
         {
 

@@ -6,12 +6,12 @@ using OpenQA.Selenium.Interactions;
 
 namespace Selenium
 { 
-    abstract class DriverStart
+    abstract class _driverStart
     {
         public abstract IWebDriver Driver();
     }
 
-    class Chrome : DriverStart
+    class Chrome : _driverStart
     {
         private IWebDriver _driver;
 
