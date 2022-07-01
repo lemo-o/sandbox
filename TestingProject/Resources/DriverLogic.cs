@@ -5,25 +5,34 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 
 namespace Selenium
-{ 
-    abstract class _driverStart
+{
+    public interface IBrowsers
     {
-        public abstract IWebDriver Driver();
+        IWebDriver Current();
+        //object Navigate();
+        //IWebDriver ChromeDriver();
+        //Edge();
+        //Firefox();
+
     }
 
-    class Chrome : _driverStart
+    class Driver : IBrowsers
     {
         private IWebDriver _driver;
-
-        public Chrome()
+        public Driver()
         {
-            _driver = new ChromeDriver();
+            _driver = new ChromeDriver(); //variable names will need to be changed for clarity for multiple browsers
         }
-
-        public override IWebDriver Driver()
+        public IWebDriver Current() //this is new
         {
             return _driver;
         }
+
     }
-    //^^^essentially copy paste for Firefox and Edge with a switch statement handling which browser instance to create
 }
+
+
+
+
+
+

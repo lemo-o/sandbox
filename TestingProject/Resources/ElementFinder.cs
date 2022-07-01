@@ -4,7 +4,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
 
-namespace Selenium
+namespace Selenium //I don't think this file actually does anything anymore
 {
     abstract class ElementFinder
     {

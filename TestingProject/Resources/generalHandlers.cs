@@ -3,44 +3,78 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Support.UI;
 
 namespace Selenium //my next step is to change most of these to have correct private/public consolidation. 
 {
-    public class _compost
+    //public class _compost
+    //{
+    //    public By _locator;
+    //    private IWebDriver _driver;
+    //}
+
+    public class ParentComponent
     {
+        private IBrowsers _driver;
         private By _locator;
 
+        public ParentComponent(IBrowsers driver, By locater)
+        {
+            _locator = locater;
+            _driver = driver;
+        }
+
+        public void BrowserStart(string temp)
+        {
+            _driver.GoToUrl(temp);
+            _driver.Manage().Window.Maximize();
+           //  _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(500);
+        }
+
     }
 
-    class ParentComponent : _compost
+    //public IWebElement FindElement()
+    //{
+    //    return WaitForElement();
+    //}
+
+    //public IWebElement WaitForElement()
+    //{
+    //    return new WebDriverWait(_driver, TimeStep.Seconds(15)).Until(drv =>
+    //    {
+    //        drv.FindElement(_locator, TimeStep.Seconds(15));
+    //    });
+    //}
+
+
+
+
+
+    
+
+
+    public class GeneralHandlers : ParentComponent
     {
-        public ParentComponent()
-        {
 
-        }
 
-        public IWebElement FindElement()
-        {
-            return WaitForElement();
-        }
 
-        public IWebElement WaitForElement()
-        {
-            return new WebDriverWait(Driver())
-        }
-        public void BrowserStart(string temp) //also navigates to page
-        {
-            Chrome.Driver().Navigate().GoToUrl(temp);
-            Chrome.Driver().Manage().Window.Maximize();
-            //  driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(500);
-        }
-    }
-
-    public class GeneralHandlers
-    { 
         public GeneralHandlers() { } //constructor
 
-        
+        public void XPathTextboxHandler(string location, string text) //this section needs errorchecking
+        {
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(1500);
+            var temp = _driver.FindElement(By.XPath(location));
+            temp.Clear();
+            temp.SendKeys(text);
+        }
+        public void IDTextboxHandler(string location, string text) //this section needs errorchecking
+        {
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(1500);
+            var temp = _driver.FindElement(By.Id(location));
+            temp.Clear();
+            temp.SendKeys(text);
+        }
+
         public void IDDropdownHandler(string _id1, string _id2)
         {
 
