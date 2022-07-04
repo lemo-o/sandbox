@@ -8,7 +8,7 @@ namespace Selenium
 {
     public interface IBrowsers
     {
-        IWebDriver Current();
+        IWebDriver CurrentDriver();
         //object Navigate();
         //IWebDriver ChromeDriver();
         //Edge();
@@ -23,7 +23,7 @@ namespace Selenium
         {
             _driver = new ChromeDriver(); //variable names will need to be changed for clarity for multiple browsers
         }
-        public IWebDriver Current() //this is new
+        public IWebDriver CurrentDriver() //this is new
         {
             return _driver;
         }

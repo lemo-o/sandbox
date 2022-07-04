@@ -68,49 +68,23 @@ namespace TestingProject.Properties {
         ///using OpenQA.Selenium.Interactions;
         ///
         ///namespace Selenium
-        /////{
-        /////    public class Chrome
-        /////    {
-        /////        private static IWebDriver _driver;
-        ///
-        /////        public static IWebDriver Driver() //singleton method - this is terrible for multiple-browser tests
-        /////        {
-        /////            if (_driver == null)
-        /////            {
-        ///
-        /////                //var service = ChromeDriverService.Creat [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string browserStarts {
-            get {
-                return ResourceManager.GetString("browserStarts", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to using System;
-        ///using Microsoft.VisualStudio.TestTools.UnitTesting;
-        ///using OpenQA.Selenium;
-        ///using OpenQA.Selenium.Chrome;
-        ///using OpenQA.Selenium.Interactions;
-        ///
-        ///namespace Selenium
         ///{
-        ///    abstract class DriverLogic
+        ///    public interface IBrowsers
         ///    {
-        ///        public abstract IWebDriver Driver();
+        ///        IWebDriver Current();
+        ///        //object Navigate();
+        ///        //IWebDriver ChromeDriver();
+        ///        //Edge();
+        ///        //Firefox();
+        ///
         ///    }
         ///
-        ///    class General:DriverLogic 
+        ///    class Driver : IBrowsers
         ///    {
         ///        private IWebDriver _driver;
-        ///
-        ///        public General(IWebDriver driver)
+        ///        public Driver()
         ///        {
-        ///            _driver = driver;
-        ///        }
-        ///
-        ///        public override IWebDriver Driver()
-        ///         [rest of string was truncated]&quot;;.
+        ///            _driver = new C [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string DriverLogic {
             get {
@@ -124,17 +98,20 @@ namespace TestingProject.Properties {
         ///using OpenQA.Selenium;
         ///using OpenQA.Selenium.Chrome;
         ///using OpenQA.Selenium.Interactions;
+        ///using OpenQA.Selenium.Support.UI;
         ///
         ///namespace Selenium //my next step is to change most of these to have correct private/public consolidation. 
         ///{
-        ///    public class GeneralHandlers
-        ///    { 
-        ///        public GeneralHandlers() { } //constructor
+        ///    //public class _compost
+        ///    //{
+        ///    //    public By _locator;
+        ///    //    private IWebDriver _driver;
+        ///    //}
         ///
-        ///        public void BrowserStart(string temp) //also navigates to page
-        ///        {
-        ///            Chrome.Driver().Navigate().GoToUrl(temp);
-        /// [rest of string was truncated]&quot;;.
+        ///    public class ParentComponent
+        ///    {
+        ///        private IBrowsers _driver;
+        ///        [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string generalHandlers {
             get {
@@ -164,7 +141,7 @@ namespace TestingProject.Properties {
         ///            _navigation();
         ///            _customer();
         ///            _shipper();
-        ///            _cons [rest of string was truncated]&quot;;.
+        ///            _consigne [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string loadCreator {
             get {
@@ -188,7 +165,7 @@ namespace TestingProject.Properties {
         ///
         ///			public LocationDefinitions() //constructor, but a more classic usage
         ///			{
-        ///			Randomi [rest of string was truncated]&quot;;.
+        ///			RandomizedI [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string locationDefinitions {
             get {

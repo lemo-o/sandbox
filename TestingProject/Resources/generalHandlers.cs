@@ -24,13 +24,32 @@ namespace Selenium //my next step is to change most of these to have correct pri
             _driver = driver;
         }
 
+        private IWebDriver _currentWebDriver() //Is there any reason that I can't just do this? 
+        {
+            return _driver.CurrentDriver();
+        }
+
+        public void Navigation(string url)
+        {
+            _currentWebDriver().Navigate().GoToUrl(url);
+        }
+
         public void BrowserStart(string temp)
         {
-            _driver.GoToUrl(temp);
-            _driver.Manage().Window.Maximize();
+            Navigation(temp);
+            _currentWebDriver().Manage().Window.Maximize();
            //  _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(500);
         }
 
+        public void XPath
+
+        public void XPathTextboxHandler(string location, string text) //this section needs errorchecking
+        {
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(1500);
+            var temp = _driver.FindElement(By.XPath(location));
+            temp.Clear();
+            temp.SendKeys(text);
+        }
     }
 
     //public IWebElement FindElement()
@@ -60,13 +79,7 @@ namespace Selenium //my next step is to change most of these to have correct pri
 
         public GeneralHandlers() { } //constructor
 
-        public void XPathTextboxHandler(string location, string text) //this section needs errorchecking
-        {
-            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(1500);
-            var temp = _driver.FindElement(By.XPath(location));
-            temp.Clear();
-            temp.SendKeys(text);
-        }
+
         public void IDTextboxHandler(string location, string text) //this section needs errorchecking
         {
             _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(1500);
