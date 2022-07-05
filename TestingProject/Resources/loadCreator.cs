@@ -6,13 +6,21 @@ using OpenQA.Selenium.Interactions;
 
 namespace Selenium
 {
-    public class LoadCreator
+    public class LoadCreator : BaseComponent
     {
 
-        GeneralHandlers constructor = new GeneralHandlers();
-        Random _rand = new Random();
+        private IBrowsers _driver;
+        private By _locator;
+        //Random _rand = new Random();
+        private Random _rand;
 
-        public LoadCreator() { }
+        public LoadCreator(IBrowsers driver, By locator, Random rand)
+        {
+            _driver = driver;
+            _locator = locator;
+            _rand = rand;
+        }
+
 
         public void ChangeThisName() 
         {
@@ -42,19 +50,19 @@ namespace Selenium
 
         private void _shipper() 
         {
-            LocationDefinitions _tempDefinitions = new LocationDefinitions();
-            constructor.TextboxHandler("/html/body/div[2]/div[2]/form/div[3]/div[2]/div/div[1]/div/div/div[2]/div/input", _tempDefinitions.RandomizedItems[0]); //name
-            constructor.TextboxHandler("/html/body/div[2]/div[2]/form/div[3]/div[2]/div/div[1]/div/div/div[3]/div/input", _tempDefinitions.RandomizedItems[1]); //Address
-            constructor.TextboxHandler("/html/body/div[2]/div[2]/form/div[3]/div[2]/div/div[1]/div/div/div[6]/div/div/span[2]/input", _tempDefinitions.RandomizedItems[3]); //ZIP
+            RandomLocation _tempDefinitions = new RandomLocation();
+            constructor.TextboxHandler("/html/body/div[2]/div[2]/form/div[3]/div[2]/div/div[1]/div/div/div[2]/div/input", _tempDefinitions.RandomList[0]); //name
+            constructor.TextboxHandler("/html/body/div[2]/div[2]/form/div[3]/div[2]/div/div[1]/div/div/div[3]/div/input", _tempDefinitions.RandomList[1]); //Address
+            constructor.TextboxHandler("/html/body/div[2]/div[2]/form/div[3]/div[2]/div/div[1]/div/div/div[6]/div/div/span[2]/input", _tempDefinitions.RandomList[3]); //ZIP
             constructor.TextboxHandler("/html/body/div[2]/div[2]/form/div[3]/div[2]/div/div[1]/div/div/div[13]/div[1]/div/input", DateTime.Now.ToString("M/d/yyyy")); //Earliest Date
         }
 
         private void _consignee() 
         {
-            LocationDefinitions _tempDefinitions = new LocationDefinitions();
-            constructor.TextboxHandler("/html/body/div[2]/div[2]/form/div[3]/div[2]/div/div[2]/div/div/div[2]/div/input", _tempDefinitions.RandomizedItems[0]); //name
-            constructor.TextboxHandler("/html/body/div[2]/div[2]/form/div[3]/div[2]/div/div[2]/div/div/div[3]/div/input", _tempDefinitions.RandomizedItems[1]); //Address
-            constructor.TextboxHandler("/html/body/div[2]/div[2]/form/div[3]/div[2]/div/div[2]/div/div/div[6]/div/div/span[2]/input", _tempDefinitions.RandomizedItems[3]); //ZIP
+            RandomLocation _tempDefinitions = new RandomLocation();
+            constructor.TextboxHandler("/html/body/div[2]/div[2]/form/div[3]/div[2]/div/div[2]/div/div/div[2]/div/input", _tempDefinitions.RandomList[0]); //name
+            constructor.TextboxHandler("/html/body/div[2]/div[2]/form/div[3]/div[2]/div/div[2]/div/div/div[3]/div/input", _tempDefinitions.RandomList[1]); //Address
+            constructor.TextboxHandler("/html/body/div[2]/div[2]/form/div[3]/div[2]/div/div[2]/div/div/div[6]/div/div/span[2]/input", _tempDefinitions.RandomList[3]); //ZIP
             constructor.TextboxHandler("/html/body/div[2]/div[2]/form/div[3]/div[2]/div/div[2]/div/div/div[13]/div[1]/div/input", DateTime.Now.ToString("M/d/yyyy"));
         }
 

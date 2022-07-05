@@ -66,12 +66,97 @@ namespace TestingProject.Properties {
         ///using OpenQA.Selenium;
         ///using OpenQA.Selenium.Chrome;
         ///using OpenQA.Selenium.Interactions;
+        ///using OpenQA.Selenium.Support.UI;
+        ///
+        ///namespace Selenium //my next step is to change most of these to have correct private/public consolidation. 
+        ///{
+        ///    //public class _compost
+        ///    //{
+        ///    //    public By _locator;
+        ///    //    private IWebDriver _driver;
+        ///    //}
+        ///
+        ///    public class BaseComponent
+        ///    {
+        ///        private IBrowsers _driver;
+        ///        p [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string BaseComponent {
+            get {
+                return ResourceManager.GetString("BaseComponent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using Microsoft.VisualStudio.TestTools.UnitTesting;
+        ///using OpenQA.Selenium;
+        ///using OpenQA.Selenium.Chrome;
+        ///using OpenQA.Selenium.Interactions;
+        ///using OpenQA.Selenium.Support.UI;
+        ///
+        ///namespace TestingProject.Resources
+        ///{
+        ///    public class Buttons : 
+        ///    {
+        ///
+        ///    }
+        ///}
+        ///.
+        /// </summary>
+        internal static string Buttons {
+            get {
+                return ResourceManager.GetString("Buttons", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///using System.Linq;
+        ///using System.Text;
+        ///using System.Threading.Tasks;
+        ///
+        ///namespace Selenium
+        ///{
+        ///    public class Constants
+        ///    {
+        ///		public static string[] Names = 
+        ///		{
+        ///			&quot;John Denver&quot;,
+        ///			&quot;Lottery Winner&quot;,
+        ///			&quot;Jessie Dean&quot;,
+        ///			&quot;Aisha Mathews&quot;,
+        ///			&quot;Traci Sawyer&quot;,
+        ///			&quot;Taran Chandler&quot;,
+        ///			&quot;Clarence Henderson&quot;,
+        ///			&quot;Zahra Curry&quot;,
+        ///			&quot;Millie-Rose Pruitt&quot;
+        ///		};
+        ///
+        ///		public static string[] Address1 =
+        ///		{
+        ///			&quot;123 America Street&quot;,
+        ///			&quot;9576 West W Emeral [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Constants {
+            get {
+                return ResourceManager.GetString("Constants", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using Microsoft.VisualStudio.TestTools.UnitTesting;
+        ///using OpenQA.Selenium;
+        ///using OpenQA.Selenium.Chrome;
+        ///using OpenQA.Selenium.Interactions;
         ///
         ///namespace Selenium
         ///{
         ///    public interface IBrowsers
         ///    {
-        ///        IWebDriver Current();
+        ///        IWebDriver CurrentDriver();
         ///        //object Navigate();
         ///        //IWebDriver ChromeDriver();
         ///        //Edge();
@@ -82,9 +167,9 @@ namespace TestingProject.Properties {
         ///    class Driver : IBrowsers
         ///    {
         ///        private IWebDriver _driver;
-        ///        public Driver()
+        ///        private Driver()
         ///        {
-        ///            _driver = new C [rest of string was truncated]&quot;;.
+        ///            _driver  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string DriverLogic {
             get {
@@ -100,22 +185,43 @@ namespace TestingProject.Properties {
         ///using OpenQA.Selenium.Interactions;
         ///using OpenQA.Selenium.Support.UI;
         ///
-        ///namespace Selenium //my next step is to change most of these to have correct private/public consolidation. 
+        ///namespace TestingProject.Resources
         ///{
-        ///    //public class _compost
-        ///    //{
-        ///    //    public By _locator;
-        ///    //    private IWebDriver _driver;
-        ///    //}
-        ///
-        ///    public class ParentComponent
+        ///    public class Dropdowns : BaseComponent
         ///    {
-        ///        private IBrowsers _driver;
-        ///        [rest of string was truncated]&quot;;.
+        ///        
+        ///    }
+        ///}
+        ///.
         /// </summary>
-        internal static string generalHandlers {
+        internal static string Dropdowns {
             get {
-                return ResourceManager.GetString("generalHandlers", resourceCulture);
+                return ResourceManager.GetString("Dropdowns", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using Microsoft.VisualStudio.TestTools.UnitTesting;
+        ///using OpenQA.Selenium;
+        ///using OpenQA.Selenium.Chrome;
+        ///using OpenQA.Selenium.Interactions;
+        ///
+        ///namespace Selenium //I don&apos;t think this file actually does anything anymore
+        ///{
+        ///    abstract class ElementFinder
+        ///    {
+        ///        public abstract object FindElement(); //i have no idea if this is correct
+        ///    }
+        ///
+        ///    class ChromeFinder : ElementFinder //does it need to be chrome? I don&apos;t ~think~ so
+        ///    {
+        ///        private object _findElement;
+        ///     [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ElementFinder {
+            get {
+                return ResourceManager.GetString("ElementFinder", resourceCulture);
             }
         }
         
@@ -128,24 +234,22 @@ namespace TestingProject.Properties {
         ///
         ///namespace Selenium
         ///{
-        ///    public class LoadCreator
+        ///    public class LoadCreator : BaseComponent
         ///    {
         ///
-        ///        GeneralHandlers constructor = new GeneralHandlers();
-        ///        Random _rand = new Random();
+        ///        private IBrowsers _driver;
+        ///        private By _locator;
+        ///        //Random _rand = new Random();
+        ///        private Random _rand;
         ///
-        ///        public LoadCreator() { }
-        ///
-        ///        public void ChangeThisName() 
+        ///        public LoadCreator(IBrowsers driver, By locator, Random rand)
         ///        {
-        ///            _navigation();
-        ///            _customer();
-        ///            _shipper();
-        ///            _consigne [rest of string was truncated]&quot;;.
+        ///            _driver = driver;
+        ///            _locator [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string loadCreator {
+        internal static string LoadCreator {
             get {
-                return ResourceManager.GetString("loadCreator", resourceCulture);
+                return ResourceManager.GetString("LoadCreator", resourceCulture);
             }
         }
         
@@ -158,14 +262,12 @@ namespace TestingProject.Properties {
         ///
         ///namespace Selenium
         ///{
-        ///		public class LocationDefinitions
+        ///		public class RandomLocation //I believe I still need this, just locally
         ///		{
         ///			Random rand = new Random();
-        ///			public string[] RandomizedItems = new string[5]; // this should &quot;interface&quot; better - maybe use something like the factory method? Is this the factory method? I don&apos;t knwo, I need to look hahaha
+        ///			public string[] RandomList = new string[5]; // this should &quot;interface&quot; better - maybe use something like the factory method? Is this the factory method? I don&apos;t knwo, I need to look hahaha
         ///
-        ///			public LocationDefinitions() //constructor, but a more classic usage
-        ///			{
-        ///			RandomizedI [rest of string was truncated]&quot;;.
+        ///			public RandomLocation() //constructor, but a m [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string locationDefinitions {
             get {

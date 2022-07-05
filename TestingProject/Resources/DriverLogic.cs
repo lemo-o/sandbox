@@ -19,7 +19,7 @@ namespace Selenium
     class Driver : IBrowsers
     {
         private IWebDriver _driver;
-        public Driver()
+        private Driver()
         {
             _driver = new ChromeDriver(); //variable names will need to be changed for clarity for multiple browsers
         }

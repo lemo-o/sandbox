@@ -13,12 +13,14 @@ namespace Selenium //my next step is to change most of these to have correct pri
     //    private IWebDriver _driver;
     //}
 
-    public class ParentComponent
+    public class BaseComponent
     {
         private IBrowsers _driver;
-        private By _locator;
+        private By _locator; 
 
-        public ParentComponent(IBrowsers driver, By locater)
+        public BaseComponent() { }
+
+        public BaseComponent(IBrowsers driver, By locater)
         {
             _locator = locater;
             _driver = driver;
@@ -29,7 +31,7 @@ namespace Selenium //my next step is to change most of these to have correct pri
             return _driver.CurrentDriver();
         }
 
-        public void Navigation(string url)
+        public void Navigation(string url) //may remove this, or just move it entirely
         {
             _driver.CurrentDriver().Navigate().GoToUrl(url);
         }
@@ -41,23 +43,26 @@ namespace Selenium //my next step is to change most of these to have correct pri
         //   //  _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(500);
         //}
 
-        //public IWebElement WaitForElement(int time)
-        //{
-        //    return new WebDriverWait(_driver.CurrentDriver(), TimeSpan.FromMilliseconds(time)).Until(drv =>
-        //    {
-        //        drv.ImplicitWait(_locator, TimeSpan.FromMilliseconds(time));
-        //    });
-        //}
-        //these do the same thing.----if they worked
-        public IWebDriver DriverImplicitWait(int time)
+        public IWebElement FindElement(By locator, TimeSpan time)
+        {
+            //i have no idea what I'm doing
+            return null;
+        }
+
+        public IWebElement WaitForElement(TimeSpan time)
+        {
+            return new WebDriverWait(_driver.CurrentDriver(), time).Until(drv => {drv.FindElement(_locator, time); });
+        }
+
+        public IWebDriver DriverImplicitWait(int time) //this does not work
         {
             _driver.CurrentDriver().Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(1500);
             return null;
         }
 
-        public IWebElement XPathFindElement(string location)
+        public IWebElement XPathFindElement(string location) //hmmmmmmm ohhhhhhhhhhhh
         {
-            return _driver.CurrentDriver().FindElement(By.XPath(location));
+            return _driver.CurrentDriver().FindElement(_locator);
         }
 
         public IWebElement IdFindElement(string location)
@@ -91,7 +96,7 @@ namespace Selenium //my next step is to change most of these to have correct pri
 
 //    }
 
-//    public class GeneralHandlers : ParentComponent
+//    public class GeneralHandlers : BaseComponent
 //    {
 
 

@@ -118,14 +118,26 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="BaseComponent" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BaseComponent.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Buttons" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Buttons.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="Constants" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Constants.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="DriverLogic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DriverLogic.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="generalHandlers" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\generalHandlers.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="Dropdowns" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Dropdowns.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="loadCreator" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\loadCreator.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="ElementFinder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ElementFinder.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="LoadCreator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LoadCreator.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="locationDefinitions" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\locationDefinitions.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
