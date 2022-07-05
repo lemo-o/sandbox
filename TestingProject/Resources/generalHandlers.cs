@@ -24,32 +24,60 @@ namespace Selenium //my next step is to change most of these to have correct pri
             _driver = driver;
         }
 
-        private IWebDriver _currentWebDriver() //Is there any reason that I can't just do this? 
+        private IWebDriver _currentWebDriver() //Is there any reason that I can't just do this? Maybe this should just in the format _currentWebDriver(browser) in IBrowsers
         {
             return _driver.CurrentDriver();
         }
 
         public void Navigation(string url)
         {
-            _currentWebDriver().Navigate().GoToUrl(url);
+            _driver.CurrentDriver().Navigate().GoToUrl(url);
         }
 
-        public void BrowserStart(string temp)
+        //public void BrowserStart(string temp) //move this to it's own class
+        //{
+        //    Navigation(temp);
+        //    _driver.CurrentDriver().Manage().Window.Maximize();
+        //   //  _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(500);
+        //}
+
+        //public IWebElement WaitForElement(int time)
+        //{
+        //    return new WebDriverWait(_driver.CurrentDriver(), TimeSpan.FromMilliseconds(time)).Until(drv =>
+        //    {
+        //        drv.ImplicitWait(_locator, TimeSpan.FromMilliseconds(time));
+        //    });
+        //}
+        //these do the same thing.----if they worked
+        public IWebDriver DriverImplicitWait(int time)
         {
-            Navigation(temp);
-            _currentWebDriver().Manage().Window.Maximize();
-           //  _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(500);
+            _driver.CurrentDriver().Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(1500);
+            return null;
         }
 
-        public void XPath
-
-        public void XPathTextboxHandler(string location, string text) //this section needs errorchecking
+        public IWebElement XPathFindElement(string location)
         {
-            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(1500);
-            var temp = _driver.FindElement(By.XPath(location));
-            temp.Clear();
-            temp.SendKeys(text);
+            return _driver.CurrentDriver().FindElement(By.XPath(location));
         }
+
+        public IWebElement IdFindElement(string location)
+        {
+            return _driver.CurrentDriver().FindElement(By.Id(location));
+        }
+
+        public void DriverExit()
+        {
+            _driver.CurrentDriver().Close();
+        }
+
+
+        //public void XPathTextboxHandler(string location, string text) //this section needs errorchecking
+        //{
+        //    _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(1500);
+        //    var temp = _driver.FindElement(By.XPath(location));
+        //    temp.Clear();
+        //    temp.SendKeys(text);
+        //}
     }
 
     //public IWebElement FindElement()
@@ -57,13 +85,7 @@ namespace Selenium //my next step is to change most of these to have correct pri
     //    return WaitForElement();
     //}
 
-    //public IWebElement WaitForElement()
-    //{
-    //    return new WebDriverWait(_driver, TimeStep.Seconds(15)).Until(drv =>
-    //    {
-    //        drv.FindElement(_locator, TimeStep.Seconds(15));
-    //    });
-    //}
+
 
 
 
