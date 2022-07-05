@@ -43,15 +43,15 @@ namespace Selenium //my next step is to change most of these to have correct pri
         //   //  _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(500);
         //}
 
-        public IWebElement FindElement(By locator, TimeSpan time)
+        public IWebElement FindElement()
         {
             //i have no idea what I'm doing
-            return null;
+            return WaitForElement();
         }
 
-        public IWebElement WaitForElement(TimeSpan time)
+        public IWebElement WaitForElement()
         {
-            return new WebDriverWait(_driver.CurrentDriver(), time).Until(drv => {drv.FindElement(_locator, time); });
+            return new WebDriverWait(_driver.CurrentDriver(), TimeSpan.FromMilliseconds(1500)).Until<IWebElement>(drv => { return drv.FindElement(_locator); });
         }
 
         public IWebDriver DriverImplicitWait(int time) //this does not work
