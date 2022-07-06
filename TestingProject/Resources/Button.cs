@@ -9,19 +9,15 @@ namespace Selenium
 {
     public class Button : BaseComponent
     {
-        Button(IBrowsers driver, By locator) 
+        //Button(IBrowsers driver, By locator) 
+        //{
+        //    _driver = driver;
+        //    _locator = locator;
+        //}
+
+        public void Click()
         {
-            this._driver = driver;
-            this._locator = locator;
+            FindElement().Click();
         }
-
-        public IWebElement Bttn()
-        {
-             return FindElement(drv => { return drv.FindElement(_locator); });
-        }
-        //            var tempbutton = Chrome.Driver().FindElement(By.XPath(location));
-        //            tempbutton.Click();
-
-
     }
 }

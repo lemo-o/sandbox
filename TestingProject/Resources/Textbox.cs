@@ -3,16 +3,15 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Support.UI;
 
 namespace Selenium
 {
-    class Working
+    public class Textbox : BaseComponent
     {
-        static void Main(string[] args)
+        public void SendKeys(string text)
         {
-            BaseComponent baseComponent = new BaseComponent();
-
-
+            FindElement().SendKeys(text);
         }
     }
 }

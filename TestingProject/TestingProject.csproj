@@ -86,6 +86,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\Button.cs" />
+    <Compile Include="Resources\Textbox.cs" />
     <Compile Include="Resources\Dropdowns.cs" />
     <Compile Include="Resources\Constants.cs" />
     <Compile Include="Resources\ElementFinder.cs" />

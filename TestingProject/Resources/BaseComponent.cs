@@ -15,8 +15,8 @@ namespace Selenium //my next step is to change most of these to have correct pri
 
     public class BaseComponent
     {
-        protected IBrowsers _driver { get; set; }
-        protected By _locator { get; set; } //-look up how this works, future me!
+        private protected IBrowsers _driver { get; set; }
+        private protected By _locator { get; set; } //-look up how this works, future me! ~~~ Future me says that this is the start of a property that you're not using. 
 
         public BaseComponent() { }
 
@@ -43,34 +43,33 @@ namespace Selenium //my next step is to change most of these to have correct pri
         //   //  _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(500);
         //}
 
-        public IWebElement FindElement(IBrowsers driver)
+        protected internal IWebElement FindElement()
         {
-            //i have no idea what I'm doing
             return WaitForElement();
         }
 
-        public IWebElement WaitForElement()
+        protected internal IWebElement WaitForElement()
         {
             return new WebDriverWait(_driver.CurrentDriver(), TimeSpan.FromSeconds(15)).Until<IWebElement>(drv => { return drv.FindElement(_locator); });
         }
 
-        public IWebDriver DriverImplicitWait(int time) //this does not work
+        protected internal IWebDriver DriverImplicitWait(int time) //this does not work
         {
             _driver.CurrentDriver().Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(1500);
             return null;
         }
 
-        public IWebElement XPathFindElement(string location) //hmmmmmmm ohhhhhhhhhhhh
+        protected internal IWebElement XPathFindElement() //hmmmmmmm ohhhhhhhhhhhh ~~~~ later on ~~~~ OHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH. There is character development going on in this piece of code
         {
             return _driver.CurrentDriver().FindElement(_locator);
         }
 
-        public IWebElement IdFindElement(string location)
+        protected internal IWebElement IdFindElement()
         {
-            return _driver.CurrentDriver().FindElement(By.Id(location));
+            return _driver.CurrentDriver().FindElement(_locator));
         }
 
-        public void DriverExit()
+        protected internal void DriverExit()
         {
             _driver.CurrentDriver().Close();
         }
