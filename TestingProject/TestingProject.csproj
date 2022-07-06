@@ -85,7 +85,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Resources\Buttons.cs" />
+    <Compile Include="Resources\Button.cs" />
     <Compile Include="Resources\Dropdowns.cs" />
     <Compile Include="Resources\Constants.cs" />
     <Compile Include="Resources\ElementFinder.cs" />

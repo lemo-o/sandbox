@@ -15,8 +15,8 @@ namespace Selenium //my next step is to change most of these to have correct pri
 
     public class BaseComponent
     {
-        private IBrowsers _driver;
-        private By _locator; 
+        protected IBrowsers _driver { get; set; }
+        protected By _locator { get; set; } //-look up how this works, future me!
 
         public BaseComponent() { }
 
@@ -43,7 +43,7 @@ namespace Selenium //my next step is to change most of these to have correct pri
         //   //  _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(500);
         //}
 
-        public IWebElement FindElement()
+        public IWebElement FindElement(IBrowsers driver)
         {
             //i have no idea what I'm doing
             return WaitForElement();
@@ -51,7 +51,7 @@ namespace Selenium //my next step is to change most of these to have correct pri
 
         public IWebElement WaitForElement()
         {
-            return new WebDriverWait(_driver.CurrentDriver(), TimeSpan.FromMilliseconds(1500)).Until<IWebElement>(drv => { return drv.FindElement(_locator); });
+            return new WebDriverWait(_driver.CurrentDriver(), TimeSpan.FromSeconds(15)).Until<IWebElement>(drv => { return drv.FindElement(_locator); });
         }
 
         public IWebDriver DriverImplicitWait(int time) //this does not work
