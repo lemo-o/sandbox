@@ -1,9 +1,6 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Interactions;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using System;
 
 namespace Selenium //my next step is to change most of these to have correct private/public consolidation. 
 {
@@ -64,9 +61,9 @@ namespace Selenium //my next step is to change most of these to have correct pri
             return _driver.CurrentDriver().FindElement(_locator);
         }
 
-        protected internal IWebElement IdFindElement()
+        protected internal IWebElement IdFindElement() //these are redundant now though haha
         {
-            return _driver.CurrentDriver().FindElement(_locator));
+            return _driver.CurrentDriver().FindElement(_locator);
         }
 
         protected internal void DriverExit()
@@ -84,10 +81,10 @@ namespace Selenium //my next step is to change most of these to have correct pri
         //}
     }
 }
-    //public IWebElement FindElement()
-    //{
-    //    return WaitForElement();
-    //}
+//public IWebElement FindElement()
+//{
+//    return WaitForElement();
+//}
 
 //    public class XTextBox
 //    {

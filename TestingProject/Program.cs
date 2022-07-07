@@ -1,18 +1,12 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Interactions;
-
-namespace Selenium
+﻿namespace Selenium
 {
     class Working
     {
         static void Main(string[] args)
         {
             BaseComponent baseComponent = new BaseComponent();
-
-
+            Navigate navigate = new Navigate();
+            navigate.Nav(Constants.URLs[0]);
         }
     }
 }

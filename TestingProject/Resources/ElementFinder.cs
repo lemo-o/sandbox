@@ -1,8 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Interactions;
+﻿using OpenQA.Selenium;
 
 namespace fjksadbfajskdh //I don't think this file actually does anything anymore. Taught me abstracts though!
 {
@@ -14,11 +10,11 @@ namespace fjksadbfajskdh //I don't think this file actually does anything anymor
     class ChromeFinder : ElementFinder //does it need to be chrome? I don't ~think~ so
     {
         private object _findElement;
-        
-        public ChromeFinder()
-        {
-            _findElement = Chrome.Driver().FindElement(By.XPath("sample")); //how do you pass the stuff thru?
-        }
+
+        //public ChromeFinder()
+        //{
+        //    _findElement = Chrome.Driver().FindElement(By.XPath("sample")); //how do you pass the stuff thru?
+        //}
 
         public override object FindElement()
         {
