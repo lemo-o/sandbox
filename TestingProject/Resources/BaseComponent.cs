@@ -6,38 +6,35 @@ namespace Selenium //my next step is to change most of these to have correct pri
 {
     //public class _compost
     //{
-    //    public By _locator;
-    //    private IWebDriver _driver;
+    //    public By Locator;
+    //    private IWebDriver Driver;
     //}
 
     public class BaseComponent
     {
-        private protected IBrowsers _driver { get; set; }
-        private protected By _locator { get; set; } //-look up how this works, future me! ~~~ Future me says that this is the start of a property that you're not using. 
+        private protected IBrowsers Driver { get; set; }
+        private protected By Locator { get; set; } //-look up how this works, future me! ~~~ Future me says that this is the start of a property that you're not using. 
 
         public BaseComponent() { }
 
         public BaseComponent(IBrowsers driver, By locater)
         {
-            _locator = locater;
-            _driver = driver;
+            Locator = locater;
+            Driver = driver;
         }
 
         private IWebDriver _currentWebDriver() //Is there any reason that I can't just do this? Maybe this should just in the format _currentWebDriver(browser) in IBrowsers
         {
-            return _driver.CurrentDriver();
+            return Driver.CurrentDriver();
         }
 
-        public void Navigation(string url) //may remove this, or just move it entirely
-        {
-            _driver.CurrentDriver().Navigate().GoToUrl(url);
-        }
+
 
         //public void BrowserStart(string temp) //move this to it's own class
         //{
         //    Navigation(temp);
-        //    _driver.CurrentDriver().Manage().Window.Maximize();
-        //   //  _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(500);
+        //    Driver.CurrentDriver().Manage().Window.Maximize();
+        //   //  Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(500);
         //}
 
         protected internal IWebElement FindElement()
@@ -47,35 +44,35 @@ namespace Selenium //my next step is to change most of these to have correct pri
 
         protected internal IWebElement WaitForElement()
         {
-            return new WebDriverWait(_driver.CurrentDriver(), TimeSpan.FromSeconds(15)).Until<IWebElement>(drv => { return drv.FindElement(_locator); });
+            return new WebDriverWait(Driver.CurrentDriver(), TimeSpan.FromSeconds(15)).Until<IWebElement>(drv => { return drv.FindElement(Locator); });
         }
 
         protected internal IWebDriver DriverImplicitWait(int time) //this does not work
         {
-            _driver.CurrentDriver().Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(1500);
+            Driver.CurrentDriver().Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(1500);
             return null;
         }
 
         protected internal IWebElement XPathFindElement() //hmmmmmmm ohhhhhhhhhhhh ~~~~ later on ~~~~ OHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH. There is character development going on in this piece of code
         {
-            return _driver.CurrentDriver().FindElement(_locator);
+            return Driver.CurrentDriver().FindElement(Locator);
         }
 
         protected internal IWebElement IdFindElement() //these are redundant now though haha
         {
-            return _driver.CurrentDriver().FindElement(_locator);
+            return Driver.CurrentDriver().FindElement(Locator);
         }
 
         protected internal void DriverExit()
         {
-            _driver.CurrentDriver().Close();
+            Driver.CurrentDriver().Close();
         }
 
 
         //public void XPathTextboxHandler(string location, string text) //this section needs errorchecking
         //{
-        //    _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(1500);
-        //    var temp = _driver.FindElement(By.XPath(location));
+        //    Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(1500);
+        //    var temp = Driver.FindElement(By.XPath(location));
         //    temp.Clear();
         //    temp.SendKeys(text);
         //}
@@ -88,7 +85,7 @@ namespace Selenium //my next step is to change most of these to have correct pri
 
 //    public class XTextBox
 //    {
-//        _driver.CurrentDriver().DriverImplicitWait(1500);
+//        Driver.CurrentDriver().DriverImplicitWait(1500);
 
 //    }
 
@@ -102,8 +99,8 @@ namespace Selenium //my next step is to change most of these to have correct pri
 
 //        public void IDTextboxHandler(string location, string text) //this section needs errorchecking
 //        {
-//            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(1500);
-//            var temp = _driver.FindElement(By.Id(location));
+//            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(1500);
+//            var temp = Driver.FindElement(By.Id(location));
 //            temp.Clear();
 //            temp.SendKeys(text);
 //        }

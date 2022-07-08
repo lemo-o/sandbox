@@ -1,12 +1,15 @@
-﻿namespace Selenium
+﻿using OpenQA.Selenium;
+
+namespace Selenium
 {
     public class Button : BaseComponent
     {
-        //Button(IBrowsers driver, By locator) 
-        //{
-        //    _driver = driver;
-        //    _locator = locator;
-        //}
+
+        public Button(IBrowsers driver, By locator)
+        {
+            Driver = driver;
+            Locator = locator;
+        }
 
         public void Click()
         {

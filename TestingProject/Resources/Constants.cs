@@ -56,18 +56,13 @@
             "https://brokerage.qc.suntecktts.com/agents/login", //qc environment
 			"https://brokerage.stage.suntecktts.com/agents/login" //staging environment
 		};
-        public static string[] IDs =
+        public static string[] Usernames =
         {
-            "agent_login", //Username field
-			"agent_password", //Password field
-
-		};
-
-        public static string[] XPaths =
+            "-"
+        };
+        public static string[] Passwords =
         {
-            "//div[3]/ul/li[3]/a", //Loads header button
-			"//div[3]//li[3]//li[2]/a", // CreateTL button
-		};
-
+            "-"
+        };
     }
 }

@@ -136,8 +136,8 @@
   <data name="ElementFinder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ElementFinder.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="LoadCreator" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LoadCreator.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="Navigate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Navigate.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>

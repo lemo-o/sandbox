@@ -93,7 +93,7 @@
     <Compile Include="Resources\ElementFinder.cs" />
     <Compile Include="Resources\DriverLogic.cs" />
     <Compile Include="Resources\RandomLocation.cs" />
-    <Compile Include="Resources\LoadCreator.cs" />
+    <Compile Include="Resources\Login.cs" />
     <Compile Include="Resources\BaseComponent.cs" />
   </ItemGroup>
   <ItemGroup>

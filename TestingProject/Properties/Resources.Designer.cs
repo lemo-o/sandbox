@@ -69,14 +69,14 @@ namespace TestingProject.Properties {
         ///{
         ///    //public class _compost
         ///    //{
-        ///    //    public By _locator;
-        ///    //    private IWebDriver _driver;
+        ///    //    public By Locator;
+        ///    //    private IWebDriver Driver;
         ///    //}
         ///
         ///    public class BaseComponent
         ///    {
-        ///        private protected IBrowsers _driver { get; set; }
-        ///        private protected By _locator { get; set; } //-look up how this works, future me! ~~~ Future me say [rest of string was truncated]&quot;;.
+        ///        private protected IBrowsers Driver { get; set; }
+        ///        private protected By Locator { get; set; } //-look up how this works, future me! ~~~ Future me says th [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string BaseComponent {
             get {
@@ -85,15 +85,18 @@ namespace TestingProject.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to namespace Selenium
+        ///   Looks up a localized string similar to using OpenQA.Selenium;
+        ///
+        ///namespace Selenium
         ///{
         ///    public class Button : BaseComponent
         ///    {
-        ///        //Button(IBrowsers driver, By locator) 
-        ///        //{
-        ///        //    _driver = driver;
-        ///        //    _locator = locator;
-        ///        //}
+        ///
+        ///        public Button(IBrowsers driver, By locator)
+        ///        {
+        ///            Driver = driver;
+        ///            Locator = locator;
+        ///        }
         ///
         ///        public void Click()
         ///        {
@@ -147,7 +150,7 @@ namespace TestingProject.Properties {
         ///    public interface IBrowsers
         ///    {
         ///        IWebDriver CurrentDriver();
-        ///        IWebElement Locator();
+        ///        By Locator();
         ///        //object Navigate();
         ///        //IWebDriver ChromeDriver();
         ///        //Edge();
@@ -158,10 +161,10 @@ namespace TestingProject.Properties {
         ///    class Driver : IBrowsers
         ///    {
         ///        private IWebDriver _driver;
-        ///        private IWebElement _locator;
-        ///        private Driver()
+        ///        private By _locator;
+        ///        public Driver()
         ///        {
-        ///            _driver = new ChromeDriver(); //variable n [rest of string was truncated]&quot;;.
+        ///            _driver = new ChromeDriver();            //variable names wil [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string DriverLogic {
             get {
@@ -210,9 +213,9 @@ namespace TestingProject.Properties {
         ///    {
         ///        private object _findElement;
         ///
-        ///        public ChromeFinder()
-        ///        {
-        ///            _findElement = Chrome.Driver().FindElement(By.XPa [rest of string was truncated]&quot;;.
+        ///        //public ChromeFinder()
+        ///        //{
+        ///        //    _findElement = Chrome.Driver().FindElement( [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ElementFinder {
             get {
@@ -221,53 +224,48 @@ namespace TestingProject.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to //using OpenQA.Selenium;
-        /////using System;
+        ///   Looks up a localized string similar to using System;
+        ///using Microsoft.VisualStudio.TestTools.UnitTesting;
+        ///using OpenQA.Selenium;
+        ///using OpenQA.Selenium.Chrome;
+        ///using OpenQA.Selenium.Interactions;
         ///
-        /////namespace Selenium
-        /////{
-        /////    public class LoadCreator : BaseComponent
-        /////    {
-        ///
-        /////        private IBrowsers _driver;
-        /////        private By _locator;
-        /////        //Random _rand = new Random();
-        /////        private Random _rand;
-        ///
-        /////        public LoadCreator(IBrowsers driver, By locator, Random rand)
-        /////        {
-        /////            _driver = driver;
-        /////            _locator = locator;
-        /////            _rand = rand;
-        /////        }
-        ///
-        ///
-        /////        public void ChangeThisNa [rest of string was truncated]&quot;;.
+        ///namespace Selenium
+        ///{
+        ///    public class Login
+        ///    {
+        ///        public void LoadCreation()
+        ///        {
+        ///            IBrowsers driver = new Driver();
+        ///            By locator = driver.Locator();
+        ///            Navigate QC = new Navigate(driver);
+        ///            QC.QCNav();
+        ///            Button button = new Button(driver, By.XPath(&quot;//div[4]/input&quot;));
+        ///         [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string LoadCreator {
+        internal static string Login {
             get {
-                return ResourceManager.GetString("LoadCreator", resourceCulture);
+                return ResourceManager.GetString("Login", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
-        ///using System.Collections.Generic;
-        ///using System.Linq;
-        ///using System.Text;
-        ///using System.Threading.Tasks;
+        ///using Microsoft.VisualStudio.TestTools.UnitTesting;
+        ///using OpenQA.Selenium;
+        ///using OpenQA.Selenium.Chrome;
+        ///using OpenQA.Selenium.Interactions;
         ///
         ///namespace Selenium
         ///{
         ///    public class Navigate : BaseComponent
         ///    {
-        ///        public void Nav(string url) //I guess I ~could~ put this in BaseComponent, but considering this is not as frequently used by different classes, it doesn&apos;t make sense to put there.
+        ///        public Navigate(IBrowsers driver)
         ///        {
-        ///            _driver.CurrentDriver().Navigate().GoToUrl(url);
+        ///           Driver = driver;
         ///        }
-        ///    }
-        ///}
-        ///.
+        ///        public void QCNav() //I guess I ~could~ put this in BaseComponent, but considering this is not as frequently used by different classes, it doesn&apos;t make sense to put there.
+        ///   [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Navigate {
             get {
