@@ -12,11 +12,11 @@ namespace Selenium
         {
            Driver = driver;
         }
-        public void QCNav() //I guess I ~could~ put this in BaseComponent, but considering this is not as frequently used by different classes, it doesn't make sense to put there.
+        public void QCNav() 
         {
             Driver.CurrentDriver().Navigate().GoToUrl(Constants.URLs[0]);
         }
-        public void StageNav() //I guess I ~could~ put this in BaseComponent, but considering this is not as frequently used by different classes, it doesn't make sense to put there.
+        public void StageNav() 
         {
             Driver.CurrentDriver().Navigate().GoToUrl(Constants.URLs[1]);
         }

@@ -90,7 +90,6 @@
     <Compile Include="Resources\Textbox.cs" />
     <Compile Include="Resources\Dropdowns.cs" />
     <Compile Include="Resources\Constants.cs" />
-    <Compile Include="Resources\ElementFinder.cs" />
     <Compile Include="Resources\DriverLogic.cs" />
     <Compile Include="Resources\RandomLocation.cs" />
     <Compile Include="Resources\Login.cs" />

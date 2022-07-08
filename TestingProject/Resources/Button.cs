@@ -4,13 +4,11 @@ namespace Selenium
 {
     public class Button : BaseComponent
     {
-
         public Button(IBrowsers driver, By locator)
         {
             Driver = driver;
             Locator = locator;
         }
-
         public void Click()
         {
             FindElement().Click();

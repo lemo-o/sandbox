@@ -4,15 +4,10 @@ namespace Selenium
 {
     public class Dropdowns : BaseComponent
     {
-        private IBrowsers _driver;
-        private By _locator;
-
-        public Dropdowns(IBrowsers driver, By locater)
+        public Dropdowns(IBrowsers driver, By locater) // this currently does not work/do anything
         {
-            _locator = locater;
-            _driver = driver;
+            Locator = locater;
+            Driver = driver;
         }
-
     }
-
 }

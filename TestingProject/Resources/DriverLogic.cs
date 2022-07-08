@@ -13,7 +13,6 @@ namespace Selenium
         //Firefox();
 
     }
-
     class Driver : IBrowsers
     {
         private IWebDriver _driver;
@@ -22,7 +21,7 @@ namespace Selenium
         {
             _driver = new ChromeDriver();            //variable names will need to be changed for clarity for multiple browsers
         }
-        public IWebDriver CurrentDriver() //this is new
+        public IWebDriver CurrentDriver()
         {
             return _driver;
         }
@@ -30,7 +29,6 @@ namespace Selenium
         {
             return _locator;
         }
-
     }
 }
 
