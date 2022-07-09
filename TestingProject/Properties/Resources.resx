@@ -133,9 +133,6 @@
   <data name="Dropdowns" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dropdowns.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="ElementFinder" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ElementFinder.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Login.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>

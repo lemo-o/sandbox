@@ -4,10 +4,6 @@ namespace Selenium
 {
     public class Dropdowns : BaseComponent
     {
-        public Dropdowns(IBrowsers driver, By locater) // this currently does not work/do anything
-        {
-            Locator = locater;
-            Driver = driver;
-        }
+        public Dropdowns(IBrowsers driver, By locator) : base(driver, locator) { }
     }
 }

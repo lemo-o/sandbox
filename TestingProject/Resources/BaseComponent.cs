@@ -16,14 +16,8 @@ namespace Selenium //my next step is to change most of these to have correct pri
             Locator = locater;
             Driver = driver;
         }
-        private IWebDriver _currentWebDriver() //Is there any reason that I can't just do this? Maybe this should just stay in the format _currentWebDriver(browser) in IBrowsers
-        {
-            return Driver.CurrentDriver();
-        }
-        protected internal IWebElement FindElement()
-        {
-            return WaitForElement();
-        }
+        protected internal IWebElement FindElement() => WaitForElement();
+
         protected internal IWebElement WaitForElement()
         {
             return new WebDriverWait(Driver.CurrentDriver(), TimeSpan.FromSeconds(15)).Until<IWebElement>(drv => { return drv.FindElement(Locator); });
@@ -33,19 +27,7 @@ namespace Selenium //my next step is to change most of these to have correct pri
             Driver.CurrentDriver().Manage().Timeouts().ImplicitWait = TimeSpan.FromMilliseconds(1500);
             return null;
         }
-        //protected internal IWebElement XPathFindElement() //hmmmmmmm ohhhhhhhhhhhh ~~~~ later on ~~~~ OHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH. There is ~character development~ going on in this piece of code
-        //{
-        //    return Driver.CurrentDriver().FindElement(Locator); 
-        //}
 
-        //protected internal IWebElement IdFindElement() //these are redundant now though haha
-        //{
-        //    return Driver.CurrentDriver().FindElement(Locator);
-        //}
-
-        protected internal void DriverExit()
-        {
-            Driver.CurrentDriver().Close();
-        }
+        protected internal void DriverExit() => Driver.CurrentDriver().Close();
     }
 }

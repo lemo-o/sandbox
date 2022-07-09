@@ -6,19 +6,19 @@ using OpenQA.Selenium.Interactions;
 
 namespace Selenium
 {
-    public class Login
+    public class LoginPage
     {
-        public void LoginPage()
+        public LoginPage()
         {
+
             IBrowsers driver = new Driver();
-            Navigate QC = new Navigate(driver);
+            Navigate QC = new Navigate(driver, By.XPath(""));
             QC.QCNav();
             Textbox username = new Textbox(driver, By.Id("agent_login"));
             username.SendKeys(Constants.Usernames[0]);
             Textbox password = new Textbox(driver, By.Id("agent_password"));
             password.SendKeys(Constants.Passwords[0]);
             Button button = new Button(driver, By.XPath("//div[4]/input"));
-            button.Click();
         }
     }
 }

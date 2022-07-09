@@ -9,8 +9,7 @@ namespace Selenium
     {
         static void Main(string[] args)
         {
-            var Login = new Login();
-            Login.LoginPage();
+            var Login = new LoginPage();
         }
     }
 }

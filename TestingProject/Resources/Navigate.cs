@@ -8,10 +8,7 @@ namespace Selenium
 {
     public class Navigate : BaseComponent
     {
-        public Navigate(IBrowsers driver)
-        {
-           Driver = driver;
-        }
+        public Navigate(IBrowsers driver, By locator) : base(driver, locator) { }
         public void QCNav() 
         {
             Driver.CurrentDriver().Navigate().GoToUrl(Constants.URLs[0]);

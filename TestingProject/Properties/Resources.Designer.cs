@@ -67,16 +67,14 @@ namespace TestingProject.Properties {
         ///
         ///namespace Selenium //my next step is to change most of these to have correct private/public consolidation. 
         ///{
-        ///    //public class _compost
-        ///    //{
-        ///    //    public By Locator;
-        ///    //    private IWebDriver Driver;
-        ///    //}
-        ///
         ///    public class BaseComponent
         ///    {
         ///        private protected IBrowsers Driver { get; set; }
-        ///        private protected By Locator { get; set; } //-look up how this works, future me! ~~~ Future me says th [rest of string was truncated]&quot;;.
+        ///        private protected By Locator { get; set; } //-look up how this works, future me! ~~~ Future me says that this is the start of a property that you&apos;re not using. 
+        ///
+        ///        public BaseComponent() { } 
+        ///
+        ///        public B [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string BaseComponent {
             get {
@@ -91,13 +89,11 @@ namespace TestingProject.Properties {
         ///{
         ///    public class Button : BaseComponent
         ///    {
-        ///
-        ///        public Button(IBrowsers driver, By locator)
+        ///        public Button(IBrowsers driver, By locator) : base(driver, locator)
         ///        {
-        ///            Driver = driver;
-        ///            Locator = locator;
+        ///            //Driver = driver;
+        ///            //Locator = locator;
         ///        }
-        ///
         ///        public void Click()
         ///        {
         ///            FindElement().Click();
@@ -157,14 +153,13 @@ namespace TestingProject.Properties {
         ///        //Firefox();
         ///
         ///    }
-        ///
         ///    class Driver : IBrowsers
         ///    {
         ///        private IWebDriver _driver;
         ///        private By _locator;
         ///        public Driver()
         ///        {
-        ///            _driver = new ChromeDriver();            //variable names wil [rest of string was truncated]&quot;;.
+        ///            _driver = new ChromeDriver();            //variable names will  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string DriverLogic {
             get {
@@ -179,47 +174,18 @@ namespace TestingProject.Properties {
         ///{
         ///    public class Dropdowns : BaseComponent
         ///    {
-        ///        private IBrowsers _driver;
-        ///        private By _locator;
-        ///
-        ///        public Dropdowns(IBrowsers driver, By locater)
+        ///        public Dropdowns(IBrowsers driver, By locater) // this currently does not work/do anything
         ///        {
-        ///            _locator = locater;
-        ///            _driver = driver;
+        ///            Locator = locater;
+        ///            Driver = driver;
         ///        }
-        ///
         ///    }
-        ///
         ///}
         ///.
         /// </summary>
         internal static string Dropdowns {
             get {
                 return ResourceManager.GetString("Dropdowns", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to using OpenQA.Selenium;
-        ///
-        ///namespace fjksadbfajskdh //I don&apos;t think this file actually does anything anymore. Taught me abstracts though!
-        ///{
-        ///    abstract class ElementFinder
-        ///    {
-        ///        public abstract object FindElement(); //i have no idea if this is correct
-        ///    }
-        ///
-        ///    class ChromeFinder : ElementFinder //does it need to be chrome? I don&apos;t ~think~ so
-        ///    {
-        ///        private object _findElement;
-        ///
-        ///        //public ChromeFinder()
-        ///        //{
-        ///        //    _findElement = Chrome.Driver().FindElement( [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string ElementFinder {
-            get {
-                return ResourceManager.GetString("ElementFinder", resourceCulture);
             }
         }
         
@@ -234,14 +200,15 @@ namespace TestingProject.Properties {
         ///{
         ///    public class Login
         ///    {
-        ///        public void LoadCreation()
+        ///        public void LoginPage()
         ///        {
+        ///
+        ///
         ///            IBrowsers driver = new Driver();
-        ///            By locator = driver.Locator();
         ///            Navigate QC = new Navigate(driver);
         ///            QC.QCNav();
-        ///            Button button = new Button(driver, By.XPath(&quot;//div[4]/input&quot;));
-        ///         [rest of string was truncated]&quot;;.
+        ///            Textbox username = new Textbox(driver, By.Id(&quot;agent_login&quot;));
+        ///            username.SendKeys(Constants.Usernames[0]) [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Login {
             get {
@@ -264,8 +231,13 @@ namespace TestingProject.Properties {
         ///        {
         ///           Driver = driver;
         ///        }
-        ///        public void QCNav() //I guess I ~could~ put this in BaseComponent, but considering this is not as frequently used by different classes, it doesn&apos;t make sense to put there.
-        ///   [rest of string was truncated]&quot;;.
+        ///        public void QCNav() 
+        ///        {
+        ///            Driver.CurrentDriver().Navigate().GoToUrl(Constants.URLs[0]);
+        ///        }
+        ///        public void StageNav() 
+        ///        {
+        ///             [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string Navigate {
             get {
@@ -306,10 +278,16 @@ namespace TestingProject.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to namespace Selenium
+        ///   Looks up a localized string similar to using OpenQA.Selenium;
+        ///namespace Selenium
         ///{
         ///    public class Textbox : BaseComponent
         ///    {
+        ///        public Textbox(IBrowsers driver, By locator) :base(driver, locator)
+        ///        {
+        ///            Driver = driver;
+        ///            Locator = locator;
+        ///        }
         ///        public void SendKeys(string text)
         ///        {
         ///            FindElement().SendKeys(text);
