@@ -16,6 +16,5 @@ namespace Selenium
             RandomList[2] = Constants.Address2[rand.Next(0, Constants.Address2.Length)];
             RandomList[3] = Constants.CityBlocks[rand.Next(0, 1)][5]; //This needs to do something different. This works for the one usecase on the loadform, and that's it
         }
-
     }
 }

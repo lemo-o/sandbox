@@ -3,7 +3,7 @@ using OpenQA.Selenium.Interactions;
 
 namespace Selenium
 {
-    public class Dropdowns : BaseComponent
+    public class Dropdowns : BaseComponent //This is currently not being used
     {
         public Dropdowns(IBrowsers driver, By locator) : base(driver, locator) 
         {

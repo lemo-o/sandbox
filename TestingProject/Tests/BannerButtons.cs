@@ -6,7 +6,7 @@ using OpenQA.Selenium.Interactions;
 
 namespace Selenium
 {
-    public class BannerButtons
+    public class BannerButtons //currently, not being used
     {
         public BannerButtons()
         {
