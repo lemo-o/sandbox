@@ -61,20 +61,46 @@ namespace TestingProject.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using Microsoft.VisualStudio.TestTools.UnitTesting;
+        ///using OpenQA.Selenium;
+        ///using OpenQA.Selenium.Chrome;
+        ///using OpenQA.Selenium.Interactions;
+        ///
+        ///namespace Selenium
+        ///{
+        ///    public class BannerButtons
+        ///    {
+        ///        public BannerButtons()
+        ///        {
+        ///            IBrowsers driver = new Driver();
+        ///            Navigate QC = new Navigate(driver);
+        ///            QC.Nav(Constants.URLs[0]);
+        ///            new LoginPage(driver);
+        ///
+        ///            var banner = new Banner(driver);
+        ///            for (int g = 0 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string BannerButtons {
+            get {
+                return ResourceManager.GetString("BannerButtons", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to using OpenQA.Selenium;
         ///using OpenQA.Selenium.Support.UI;
+        ///using OpenQA.Selenium.Interactions;
         ///using System;
         ///
         ///namespace Selenium //my next step is to change most of these to have correct private/public consolidation. 
         ///{
         ///    public class BaseComponent
         ///    {
-        ///        private protected IBrowsers Driver { get; set; }
-        ///        private protected By Locator { get; set; } //-look up how this works, future me! ~~~ Future me says that this is the start of a property that you&apos;re not using. 
+        ///        private protected IBrowsers driver { get; set; }
+        ///        private protected By locator { get; set; } //-look up how this works, future me! ~~~ Future me says that this is the start of a property that you&apos;re not using. 
         ///
-        ///        public BaseComponent() { } 
-        ///
-        ///        public B [rest of string was truncated]&quot;;.
+        ///        public IBr [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string BaseComponent {
             get {
@@ -89,15 +115,13 @@ namespace TestingProject.Properties {
         ///{
         ///    public class Button : BaseComponent
         ///    {
-        ///        public Button(IBrowsers driver, By locator) : base(driver, locator)
-        ///        {
-        ///            //Driver = driver;
-        ///            //Locator = locator;
-        ///        }
+        ///        public Button(IBrowsers driver, By locator) : base(driver, locator) {  }
+        ///
         ///        public void Click()
         ///        {
         ///            FindElement().Click();
         ///        }
+        ///
         ///    }
         ///}
         ///.
@@ -146,7 +170,7 @@ namespace TestingProject.Properties {
         ///    public interface IBrowsers
         ///    {
         ///        IWebDriver CurrentDriver();
-        ///        By Locator();
+        ///        //By Locator();
         ///        //object Navigate();
         ///        //IWebDriver ChromeDriver();
         ///        //Edge();
@@ -156,10 +180,9 @@ namespace TestingProject.Properties {
         ///    class Driver : IBrowsers
         ///    {
         ///        private IWebDriver _driver;
-        ///        private By _locator;
         ///        public Driver()
         ///        {
-        ///            _driver = new ChromeDriver();            //variable names will  [rest of string was truncated]&quot;;.
+        ///            _driver = new ChromeDriver();            //variable names will need to be changed for clari [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string DriverLogic {
             get {
@@ -169,16 +192,28 @@ namespace TestingProject.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to using OpenQA.Selenium;
+        ///using OpenQA.Selenium.Interactions;
         ///
         ///namespace Selenium
         ///{
         ///    public class Dropdowns : BaseComponent
         ///    {
-        ///        public Dropdowns(IBrowsers driver, By locater) // this currently does not work/do anything
+        ///        public Dropdowns(IBrowsers driver, By locator) : base(driver, locator) 
         ///        {
-        ///            Locator = locater;
-        ///            Driver = driver;
+        ///            //kinda just doubled up buttons; just using buttons twice on a page module does the same thing
+        ///
         ///        }
+        ///
+        ///        public void Type2() //Click
+        ///        {
+        ///
+        ///        }
+        ///
+        ///        public void Type3() //
+        ///        {
+        ///
+        ///        }
+        ///
         ///    }
         ///}
         ///.
@@ -186,6 +221,31 @@ namespace TestingProject.Properties {
         internal static string Dropdowns {
             get {
                 return ResourceManager.GetString("Dropdowns", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using OpenQA.Selenium;
+        ///using OpenQA.Selenium.Support.UI;
+        ///using OpenQA.Selenium.Interactions;
+        ///using System;
+        ///
+        ///namespace Selenium
+        ///{
+        ///    public class Hover : BaseComponent
+        ///    {
+        ///        public Hover(IBrowsers driver, By locator) : base(driver, locator)
+        ///        {
+        ///            Actions action = new Actions(base.driver.CurrentDriver());
+        ///            action.MoveToElement(FindElement()).Perform();
+        ///        }
+        ///    }
+        ///}
+        ///.
+        /// </summary>
+        internal static string Hover {
+            get {
+                return ResourceManager.GetString("Hover", resourceCulture);
             }
         }
         
@@ -198,21 +258,15 @@ namespace TestingProject.Properties {
         ///
         ///namespace Selenium
         ///{
-        ///    public class Login
+        ///    internal class LoadCreator
         ///    {
-        ///        public void LoginPage()
-        ///        {
-        ///
-        ///
-        ///            IBrowsers driver = new Driver();
-        ///            Navigate QC = new Navigate(driver);
-        ///            QC.QCNav();
-        ///            Textbox username = new Textbox(driver, By.Id(&quot;agent_login&quot;));
-        ///            username.SendKeys(Constants.Usernames[0]) [rest of string was truncated]&quot;;.
+        ///    }
+        ///}
+        ///.
         /// </summary>
-        internal static string Login {
+        internal static string LoadCreator {
             get {
-                return ResourceManager.GetString("Login", resourceCulture);
+                return ResourceManager.GetString("LoadCreator", resourceCulture);
             }
         }
         
@@ -227,17 +281,15 @@ namespace TestingProject.Properties {
         ///{
         ///    public class Navigate : BaseComponent
         ///    {
-        ///        public Navigate(IBrowsers driver)
+        ///        public Navigate(IBrowsers driver) : base(driver) { }
+        ///        public void Nav(string URL) 
         ///        {
-        ///           Driver = driver;
+        ///            driver.CurrentDriver().Navigate().GoToUrl(URL);
         ///        }
-        ///        public void QCNav() 
-        ///        {
-        ///            Driver.CurrentDriver().Navigate().GoToUrl(Constants.URLs[0]);
-        ///        }
-        ///        public void StageNav() 
-        ///        {
-        ///             [rest of string was truncated]&quot;;.
+        ///
+        ///    }
+        ///}
+        ///.
         /// </summary>
         internal static string Navigate {
             get {
@@ -247,20 +299,45 @@ namespace TestingProject.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to using System;
+        ///using Microsoft.VisualStudio.TestTools.UnitTesting;
+        ///using OpenQA.Selenium;
+        ///using OpenQA.Selenium.Chrome;
+        ///using OpenQA.Selenium.Interactions;
+        ///using System.Collections.Generic;
+        ///using Microsoft.Office.Interop.Excel;
+        ///
+        ///namespace Selenium
+        ///{
+        ///    public class ButtonList
+        ///    {
+        ///        private List&lt;Button&gt; _currentButtonList { get; set; }
+        ///        public List&lt;Button&gt; CurrentButtonList
+        ///        {
+        ///            get { return _currentButtonList; }
+        ///            set { _currentButtonList = value; }        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ObjectLists {
+            get {
+                return ResourceManager.GetString("ObjectLists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
         ///using System.Collections.Generic;
         ///
         ///namespace Selenium
         ///{
-        ///    public class RandomLocation //I believe I still need this, just locally
+        ///    public class RandomLocation
         ///    {
         ///        Random rand = new Random();
         ///        //public string[] RandomList = new string[5]; 
-        ///        List&lt;string&gt; RandomList = new List&lt;string&gt;();
+        ///        public List&lt;string&gt; RandomList = new List&lt;string&gt;();
         ///
         ///        public RandomLocation() //constructor, but a more classic usage
         ///        {
         ///            RandomList[0] = Constants.Names[rand.Next(0, Constants.Names.Length)];
-        ///            RandomList[1] = Constan [rest of string was truncated]&quot;;.
+        ///            RandomList[1] = Constants.Address1[rand.Next(0, Constants.Ad [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string RandomLocation {
             get {
@@ -283,15 +360,13 @@ namespace TestingProject.Properties {
         ///{
         ///    public class Textbox : BaseComponent
         ///    {
-        ///        public Textbox(IBrowsers driver, By locator) :base(driver, locator)
-        ///        {
-        ///            Driver = driver;
-        ///            Locator = locator;
-        ///        }
+        ///        public Textbox(IBrowsers driver, By locator) : base(driver, locator) { }
+        ///
         ///        public void SendKeys(string text)
         ///        {
         ///            FindElement().SendKeys(text);
         ///        }
+        ///
         ///    }
         ///}
         ///.

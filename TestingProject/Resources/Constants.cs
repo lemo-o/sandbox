@@ -53,16 +53,17 @@
         };
         public static string[] URLs =
         {
-            "https://brokerage.qc.suntecktts.com/agents/login", //qc environment
-			"https://brokerage.stage.suntecktts.com/agents/login" //staging environment
-		};
+            "https://brokerage.qc.suntecktts.com/agents/login", //qc environment login
+			"https://brokerage.stage.suntecktts.com/agents/login", //staging environment login 
+            "https://brokerage.qc.suntecktts.com/web/home"
+        };
         public static string[] Usernames =
         {
-            "-"
+            "ben.hall"
         };
         public static string[] Passwords =
         {
-            "-"
+            "Qll2mm.08"
         };
     }
 }

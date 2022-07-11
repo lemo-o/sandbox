@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="BannerButtons" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Tests\BannerButtons.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="BaseComponent" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BaseComponent.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -133,11 +136,17 @@
   <data name="Dropdowns" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dropdowns.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Login.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="Hover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Hover.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="LoadCreator" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Tests\LoadCreator.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="Navigate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Navigate.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ObjectLists" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ObjectLists.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="RandomLocation" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RandomLocation.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>

@@ -8,14 +8,11 @@ namespace Selenium
 {
     public class Navigate : BaseComponent
     {
-        public Navigate(IBrowsers driver, By locator) : base(driver, locator) { }
-        public void QCNav() 
+        public Navigate(IBrowsers driver) : base(driver) { }
+        public void Nav(string URL) 
         {
-            Driver.CurrentDriver().Navigate().GoToUrl(Constants.URLs[0]);
+            driver.CurrentDriver().Navigate().GoToUrl(URL);
         }
-        public void StageNav() 
-        {
-            Driver.CurrentDriver().Navigate().GoToUrl(Constants.URLs[1]);
-        }
+
     }
 }

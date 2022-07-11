@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Selenium
 {
-    public class RandomLocation //I believe I still need this, just locally
+    public class RandomLocation
     {
         Random rand = new Random();
         //public string[] RandomList = new string[5]; 
-        List<string> RandomList = new List<string>();
+        public List<string> RandomList = new List<string>();
 
         public RandomLocation() //constructor, but a more classic usage
         {
