@@ -92,6 +92,7 @@
     </Compile>
     <Compile Include="Resources\Button.cs" />
     <Compile Include="Pages\Banner.cs" />
+    <Compile Include="Resources\Components.cs" />
     <Compile Include="Resources\ObjectLists.cs" />
     <Compile Include="Resources\Hover.cs" />
     <Compile Include="Resources\Navigate.cs" />
