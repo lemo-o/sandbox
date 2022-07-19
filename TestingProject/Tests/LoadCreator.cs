@@ -25,12 +25,12 @@ namespace Selenium
             TLpage.ShipperAddress1(Constants.Address1[0]);
             TLpage.ShipperAddress2(Constants.Address2[0]);
             TLpage.ShipperZIP(Constants.CityBlocks[0][5]);
-            TLpage.ShipperEarliestDate("07 / 11 / 2022");
+            TLpage.ShipperEarliestDate("07 / 18 / 2022");
             TLpage.ConsigneeName(Constants.Names[1]);
             TLpage.ConsigneeAddress1(Constants.Address1[1]);
             TLpage.ConsigneeAddress2(Constants.Address2[1]);
             TLpage.ConsigneeZIP(Constants.CityBlocks[1][5]);
-            TLpage.ConsigneeEarliestDate("07 / 11 / 2022");
+            TLpage.ConsigneeEarliestDate("07 / 18 / 2022");
             TLpage.Quantity("12");
             TLpage.UnitOfMeasurement();
             TLpage.Description("stuff");

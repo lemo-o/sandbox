@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OpenQA.Selenium;
 
 namespace Selenium
 {
-    internal class Components : BaseComponent
+    internal class Component : BaseComponent
     {
+        public Component(IBrowsers driver, By locator) : base(driver, locator) { }
 
+        public void SendKeys(string text) => FindElement().SendKeys(text);
+        public void Click() => FindElement().Click();
     }
 }
