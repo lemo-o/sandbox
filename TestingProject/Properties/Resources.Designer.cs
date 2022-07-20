@@ -61,33 +61,6 @@ namespace TestingProject.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to using System;
-        ///using Microsoft.VisualStudio.TestTools.UnitTesting;
-        ///using OpenQA.Selenium;
-        ///using OpenQA.Selenium.Chrome;
-        ///using OpenQA.Selenium.Interactions;
-        ///
-        ///namespace Selenium
-        ///{
-        ///    public class BannerButtons
-        ///    {
-        ///        public BannerButtons()
-        ///        {
-        ///            IBrowsers driver = new Driver();
-        ///            Navigate QC = new Navigate(driver);
-        ///            QC.Nav(Constants.URLs[0]);
-        ///            new LoginPage(driver);
-        ///
-        ///            var banner = new Banner(driver);
-        ///            for (int g = 0 [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string BannerButtons {
-            get {
-                return ResourceManager.GetString("BannerButtons", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to using OpenQA.Selenium;
         ///using OpenQA.Selenium.Support.UI;
         ///using OpenQA.Selenium.Interactions;
@@ -110,25 +83,24 @@ namespace TestingProject.Properties {
         
         /// <summary>
         ///   Looks up a localized string similar to using OpenQA.Selenium;
+        ///using OpenQA.Selenium.Interactions;
         ///
         ///namespace Selenium
         ///{
-        ///    public class Button : BaseComponent
+        ///    public class Components : BaseComponent
         ///    {
-        ///        public Button(IBrowsers driver, By locator) : base(driver, locator) {  }
+        ///        public Components(IBrowsers driver, By locator) : base(driver, locator) { }
         ///
-        ///        public void Click()
+        ///        public void SendKeys(string text) =&gt; FindElement().SendKeys(text);
+        ///        public void Click() =&gt; FindElement().Click();
+        ///        public void Hover()
         ///        {
-        ///            FindElement().Click();
-        ///        }
-        ///
-        ///    }
-        ///}
-        ///.
+        ///            Actions action = new Actions(base.driver.CurrentDriver());
+        ///            action.MoveToElement(FindElement [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string Button {
+        internal static string Components {
             get {
-                return ResourceManager.GetString("Button", resourceCulture);
+                return ResourceManager.GetString("Components", resourceCulture);
             }
         }
         
@@ -191,86 +163,6 @@ namespace TestingProject.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to using OpenQA.Selenium;
-        ///using OpenQA.Selenium.Interactions;
-        ///
-        ///namespace Selenium
-        ///{
-        ///    public class Dropdowns : BaseComponent
-        ///    {
-        ///        public Dropdowns(IBrowsers driver, By locator) : base(driver, locator) 
-        ///        {
-        ///            //kinda just doubled up buttons; just using buttons twice on a page module does the same thing
-        ///
-        ///        }
-        ///
-        ///        public void Type2() //Click
-        ///        {
-        ///
-        ///        }
-        ///
-        ///        public void Type3() //
-        ///        {
-        ///
-        ///        }
-        ///
-        ///    }
-        ///}
-        ///.
-        /// </summary>
-        internal static string Dropdowns {
-            get {
-                return ResourceManager.GetString("Dropdowns", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to using OpenQA.Selenium;
-        ///using OpenQA.Selenium.Support.UI;
-        ///using OpenQA.Selenium.Interactions;
-        ///using System;
-        ///
-        ///namespace Selenium
-        ///{
-        ///    public class Hover : BaseComponent
-        ///    {
-        ///        public Hover(IBrowsers driver, By locator) : base(driver, locator)
-        ///        {
-        ///            Actions action = new Actions(base.driver.CurrentDriver());
-        ///            action.MoveToElement(FindElement()).Perform();
-        ///        }
-        ///    }
-        ///}
-        ///.
-        /// </summary>
-        internal static string Hover {
-            get {
-                return ResourceManager.GetString("Hover", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to using System;
-        ///using Microsoft.VisualStudio.TestTools.UnitTesting;
-        ///using OpenQA.Selenium;
-        ///using OpenQA.Selenium.Chrome;
-        ///using OpenQA.Selenium.Interactions;
-        ///
-        ///namespace Selenium
-        ///{
-        ///    internal class LoadCreator
-        ///    {
-        ///    }
-        ///}
-        ///.
-        /// </summary>
-        internal static string LoadCreator {
-            get {
-                return ResourceManager.GetString("LoadCreator", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to using System;
         ///using Microsoft.VisualStudio.TestTools.UnitTesting;
         ///using OpenQA.Selenium;
@@ -308,13 +200,11 @@ namespace TestingProject.Properties {
         ///
         ///namespace Selenium
         ///{
-        ///    public class ButtonList
+        ///    //this should probably be changed to use inheritance (maybe an interface?) Proof of concept for now
+        ///    //This used to be two lists; one for textboxes and one for buttons.
+        ///    public class ComponentList
         ///    {
-        ///        private List&lt;Button&gt; _currentButtonList { get; set; }
-        ///        public List&lt;Button&gt; CurrentButtonList
-        ///        {
-        ///            get { return _currentButtonList; }
-        ///            set { _currentButtonList = value; }        /// [rest of string was truncated]&quot;;.
+        ///        private List&lt;(Components com [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ObjectLists {
             get {
@@ -331,13 +221,13 @@ namespace TestingProject.Properties {
         ///    public class RandomLocation
         ///    {
         ///        Random rand = new Random();
-        ///        //public string[] RandomList = new string[5]; 
-        ///        public List&lt;string&gt; RandomList = new List&lt;string&gt;();
+        ///        //public string[] _randomList = new string[5]; 
+        ///        public List&lt;string&gt; _randomList = new List&lt;string&gt;();
         ///
         ///        public RandomLocation() //constructor, but a more classic usage
         ///        {
-        ///            RandomList[0] = Constants.Names[rand.Next(0, Constants.Names.Length)];
-        ///            RandomList[1] = Constants.Address1[rand.Next(0, Constants.Ad [rest of string was truncated]&quot;;.
+        ///            _randomList[0] = Constants.Names[rand.Next(0, Constants.Names.Length)];
+        ///            _randomList[1] = Constants.Address1[rand.Next(0, Constants.Ad [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string RandomLocation {
             get {
@@ -351,29 +241,6 @@ namespace TestingProject.Properties {
         internal static string String1 {
             get {
                 return ResourceManager.GetString("String1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to using OpenQA.Selenium;
-        ///namespace Selenium
-        ///{
-        ///    public class Textbox : BaseComponent
-        ///    {
-        ///        public Textbox(IBrowsers driver, By locator) : base(driver, locator) { }
-        ///
-        ///        public void SendKeys(string text)
-        ///        {
-        ///            FindElement().SendKeys(text);
-        ///        }
-        ///
-        ///    }
-        ///}
-        ///.
-        /// </summary>
-        internal static string Textbox {
-            get {
-                return ResourceManager.GetString("Textbox", resourceCulture);
             }
         }
     }

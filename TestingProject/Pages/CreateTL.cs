@@ -9,20 +9,21 @@ namespace Selenium
 {
     public class CreateTL : BaseComponent
     {
-        private TextBoxList textboxes = new TextBoxList();
-        private ButtonList buttons = new ButtonList();
-
+        private ComponentList _components = new ComponentList();
+        private int _index; 
         public CreateTL(IBrowsers driver) : base(driver)
         {
-            for (int i = 0; i < elements[0].Length; i++)
+            for (int i = 0; i < elements[0].Length; i++) //fills with the first bank of elements[][], which is all the button elements which require clicking
             {
-                buttons.CurrentButtonList.Add((new Button(driver, elements[0][i]), "")); //since the LINQ idea isn't working, it's easiest to leave the string field blank
+                _components.CurrentComponentList.Add((new Components(driver, elements[0][i]), "")); //since the LINQ idea isn't working, it's easiest to leave the string field blank
             }
-            for (int i = 0; i < elements[1].Length; i++)
+            _index = elements[0].Length; //it is technically faster to just index the arraylength rather than measuring the length each time
+            for (int i = 0; i < elements[1].Length; i++) //fills with the first bank of elements[][], which is all the textbox elements which require text
             {
-                textboxes.CurrentTextboxList.Add((new Textbox(driver, elements[1][i]), ""));
+                _components.CurrentComponentList.Add((new Components(driver, elements[1][i]), ""));
             }
         }
+        private List<string> _randomList = new List<string>();
 
         //I believe this whole situation can be avoided in at least 3 different ways. Best way would be to get LINQ working
         private void tooMuchTyping(int listSelect, int listIndex, string inputPassthrough) //0 for clicks, 1 for textboxes
@@ -30,34 +31,36 @@ namespace Selenium
             switch(listSelect)
             {
                 case 0:
-                    buttons.CurrentButtonList[listIndex].button.Click();
-                    buttons.CurrentButtonList[listIndex+1].button.Click();
+                    _components.CurrentComponentList[listIndex].component.Click();
+                    _components.CurrentComponentList[listIndex+1].component.Click();
                     break;
                 case 1:
-                    textboxes.CurrentTextboxList[listIndex].textbox.SendKeys(inputPassthrough);
+                    _components.CurrentComponentList[listIndex+_index].component.SendKeys(inputPassthrough);
                     break;
             };
         }
-        public void CustomerField() => tooMuchTyping(0, 0, "");
 
-        public void ShipperName(string input) => tooMuchTyping(1, 0, input);
-        public void ShipperAddress1(string input) => tooMuchTyping(1,1,input); //
-        public void ShipperAddress2(string input) => tooMuchTyping(1, 2, input);
-        public void ShipperZIP(string input) => tooMuchTyping(1, 5, input);
-        public void ShipperEarliestDate(string input) => tooMuchTyping(1, 6, input);
-        public void ConsigneeName(string input) => tooMuchTyping(1, 7, input);
-        public void ConsigneeAddress1(string input) => tooMuchTyping(1, 8, input);
-        public void ConsigneeAddress2(string input) => tooMuchTyping(1, 9, input);
-        public void ConsigneeZIP (string input) => tooMuchTyping(1, 12, input);
-        public void ConsigneeEarliestDate(string input) => tooMuchTyping(1, 13, input);
-        public void Quantity(string input) => tooMuchTyping(1, 14, input);
+        Random rand = new Random();
+        public void Navigation() => driver.CurrentDriver().Navigate().GoToUrl(Constants.URLs[3]);
+        public void CustomerField() => tooMuchTyping(0, 0, "");
+        public void ShipperName() => tooMuchTyping(1, 0, Constants.Names[rand.Next(0, Constants.Names.Length)]);
+        public void ShipperAddress1() => tooMuchTyping(1,1, Constants.Address1[rand.Next(0, Constants.Address1.Length)]); 
+        public void ShipperAddress2() => tooMuchTyping(1, 2, Constants.Address2[rand.Next(0, Constants.Address2.Length)]);
+        public void ShipperZIP() => tooMuchTyping(1, 5, Constants.CityBlocks[rand.Next(0, 1)][5]);
+        public void ShipperEarliestDate() => tooMuchTyping(1, 6, DateTime.Now.ToString("M/d/yyyy"));
+        public void ConsigneeName() => tooMuchTyping(1, 7, Constants.Names[rand.Next(0, Constants.Names.Length)]);
+        public void ConsigneeAddress1() => tooMuchTyping(1, 8, Constants.Address1[rand.Next(0, Constants.Address1.Length)]);
+        public void ConsigneeAddress2() => tooMuchTyping(1, 9, Constants.Address2[rand.Next(0, Constants.Address2.Length)]);
+        public void ConsigneeZIP () => tooMuchTyping(1, 12, Constants.CityBlocks[rand.Next(0, 1)][5]);
+        public void ConsigneeEarliestDate() => tooMuchTyping(1, 13, DateTime.Now.ToString("M/d/yyyy"));
+        public void Quantity() => tooMuchTyping(1, 14, rand.Next(0,10).ToString());
         public void UnitOfMeasurement() => tooMuchTyping(0, 2, "");
-        public void Description(string input) => tooMuchTyping(1, 15, input);
+        public void Description() => tooMuchTyping(1, 15, "stuff");
         public void EquipmentType() => tooMuchTyping(0, 4, "");
-        public void Weight(string input) => tooMuchTyping(1, 16, input);
-        public void MileageEngine() => buttons.CurrentButtonList[7].button.Click();
-        public void Method() => buttons.CurrentButtonList[9].button.Click();
-        public void CreateLoadButton() => buttons.CurrentButtonList[10].button.Click();
+        public void Weight() => tooMuchTyping(1, 16, rand.Next(0, 150000).ToString());
+        public void MileageEngine() => _components.CurrentComponentList[7].component.Click();
+        public void Method() => _components.CurrentComponentList[9].component.Click();
+        public void CreateLoadButton() => _components.CurrentComponentList[10].component.Click();
 
 
 

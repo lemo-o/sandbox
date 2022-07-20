@@ -11,9 +11,8 @@ namespace Selenium
         public LoadCreator()
         {
             IBrowsers driver = new Driver();
-            Navigate nav = new Navigate(driver);
-            nav.Nav(Constants.URLs[0]);
             var loginPage = new LoginPage(driver);
+            loginPage.Navigation();
             loginPage.UsernameFill(Constants.Usernames[0]);
             loginPage.PasswordFill(Constants.Passwords[0]);
             loginPage.LoginButton();
@@ -21,21 +20,21 @@ namespace Selenium
             banner.CreateTLClick();
             var TLpage = new CreateTL(driver);
             TLpage.CustomerField();
-            TLpage.ShipperName(Constants.Names[0]);
-            TLpage.ShipperAddress1(Constants.Address1[0]);
-            TLpage.ShipperAddress2(Constants.Address2[0]);
-            TLpage.ShipperZIP(Constants.CityBlocks[0][5]);
-            TLpage.ShipperEarliestDate("07 / 18 / 2022");
-            TLpage.ConsigneeName(Constants.Names[1]);
-            TLpage.ConsigneeAddress1(Constants.Address1[1]);
-            TLpage.ConsigneeAddress2(Constants.Address2[1]);
-            TLpage.ConsigneeZIP(Constants.CityBlocks[1][5]);
-            TLpage.ConsigneeEarliestDate("07 / 18 / 2022");
-            TLpage.Quantity("12");
+            TLpage.ShipperName();
+            TLpage.ShipperAddress1();
+            TLpage.ShipperAddress2();
+            TLpage.ShipperZIP();
+            TLpage.ShipperEarliestDate();
+            TLpage.ConsigneeName();
+            TLpage.ConsigneeAddress1();
+            TLpage.ConsigneeAddress2();
+            TLpage.ConsigneeZIP();
+            TLpage.ConsigneeEarliestDate();
+            TLpage.Quantity();
             TLpage.UnitOfMeasurement();
-            TLpage.Description("stuff");
+            TLpage.Description();
             TLpage.EquipmentType();
-            TLpage.Weight("123");
+            TLpage.Weight();
             TLpage.MileageEngine();
             TLpage.Method();
         }

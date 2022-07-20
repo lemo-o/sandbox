@@ -55,7 +55,8 @@
         {
             "https://brokerage.qc.suntecktts.com/agents/login", //qc environment login
 			"https://brokerage.stage.suntecktts.com/agents/login", //staging environment login 
-            "https://brokerage.qc.suntecktts.com/web/home"
+            "https://brokerage.qc.suntecktts.com/web/home", //QC Homepage
+            "https://brokerage.qc.suntecktts.com/web/loads/new" //QC CreateTL
         };
         public static string[] Usernames =
         {
@@ -63,7 +64,7 @@
         };
         public static string[] Passwords =
         {
-            "-"
+            ""
         };
     }
 }

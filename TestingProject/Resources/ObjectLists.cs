@@ -9,30 +9,18 @@ using Microsoft.Office.Interop.Excel;
 namespace Selenium
 {
     //this should probably be changed to use inheritance (maybe an interface?) Proof of concept for now
-    public class ButtonList
+    //This used to be two lists; one for textboxes and one for buttons.
+    public class ComponentList
     {
-        private List<(Button button, string input)> _currentButtonList { get; set; }
-        public List<(Button button, string input)> CurrentButtonList
+        private List<(Components component, string input)> _currentComponentList { get; set; }
+        public List<(Components component, string input)> CurrentComponentList
         {
-            get { return _currentButtonList; }
-            set { _currentButtonList = value; }
+            get { return _currentComponentList; }
+            set { _currentComponentList = value; }
         }
-        public ButtonList()
+        public ComponentList()
         {
-            _currentButtonList = new List<(Button button, string input)>();
-        }
-    }
-    public class TextBoxList
-    {
-        private List<(Textbox textbox, string input)> _currentTextboxList { get; set; }
-        public List<(Textbox textbox, string input)> CurrentTextboxList
-        {
-            get { return _currentTextboxList; }
-            set { _currentTextboxList = value; }
-        }
-        public TextBoxList()
-        {
-            _currentTextboxList = new List<(Textbox textbox, string input)>();
+            _currentComponentList = new List<(Components button, string input)>();
         }
     }
 }

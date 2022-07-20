@@ -9,18 +9,20 @@ namespace Selenium
 {
     public class LoginPage : BaseComponent
     {
-        private TextBoxList textboxes = new TextBoxList();
-        private ButtonList buttons = new ButtonList();
+        //private TextBoxList textboxes = new TextBoxList();
+        //private ButtonList buttons = new ButtonList();
+        private ComponentList _components = new ComponentList();
 
         public LoginPage(IBrowsers driver) : base(driver) 
         {
-            textboxes.CurrentTextboxList.Add((new Textbox(driver, By.Id("agent_login")), "username"));
-            textboxes.CurrentTextboxList.Add((new Textbox(driver, By.Id("agent_password")), "password"));
-            buttons.CurrentButtonList.Add( (new Button(driver, By.XPath("//div[4]/input")), "Log In Button"));
+            _components.CurrentComponentList.Add((new Components(driver, By.Id("agent_login")), "username"));
+            _components.CurrentComponentList.Add((new Components(driver, By.Id("agent_password")), "password"));
+            _components.CurrentComponentList.Add((new Components(driver, By.XPath("//div[4]/input")), "Log In Button"));
         }
-        public void UsernameFill(string input) => textboxes.CurrentTextboxList[0].textbox.SendKeys(input);
-        public void PasswordFill(string input) => textboxes.CurrentTextboxList[1].textbox.SendKeys(input);
-        public void LoginButton() => buttons.CurrentButtonList[0].button.Click();
+        public void Navigation() => driver.CurrentDriver().Navigate().GoToUrl(Constants.URLs[0]);
+        public void UsernameFill(string input) => _components.CurrentComponentList[0].component.SendKeys(input);
+        public void PasswordFill(string input) => _components.CurrentComponentList[1].component.SendKeys(input);
+        public void LoginButton() => _components.CurrentComponentList[2].component.Click();
     }
 }
 

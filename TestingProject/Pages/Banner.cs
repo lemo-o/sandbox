@@ -9,15 +9,16 @@ namespace Selenium
 {
     public class Banner : BaseComponent 
     {
-        private TextBoxList textboxes = new TextBoxList();
-        private ButtonList buttons = new ButtonList();
+        //private TextBoxList textboxes = new TextBoxList();
+        //private ButtonList buttons = new ButtonList();
+        private ComponentList components = new ComponentList();
         public Banner(IBrowsers driver) : base(driver)
         {
             for (int g = 0; g < _bannerBy.Length; g++)
             {
                 for (int i = 0; i < _bannerBy[g].Length; i++)
                 {
-                    buttons.CurrentButtonList.Add((new Button(driver, _bannerBy[g][i]), _bannerString[g][i]));
+                    components.CurrentComponentList.Add((new Components(driver, _bannerBy[g][i]), _bannerString[g][i]));
                 }
             }
         }
@@ -27,9 +28,9 @@ namespace Selenium
             //buttons.CurrentButtonList.Single(input); //here's the idea - using LINQ to search the index part of the list to return whatever button you need quickly and easily
             //i just can't make it work so right now it's just janky, 
 
-            Hover _currentButton = new Hover(driver, _bannerBy[banner][0]);
-            _currentButton.MouseOver();
-            buttons.CurrentButtonList[index].button.Click();
+            Components _currentButton = new Components(driver, _bannerBy[banner][0]);
+            _currentButton.Hover();
+            components.CurrentComponentList[index].component.Click();
 
             //new Hover(driver, _bannerBy[mainButton][0]); 
             //buttons.CurrentButtonList[mainButton * subMenu].button.Click();
