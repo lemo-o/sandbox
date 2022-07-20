@@ -130,14 +130,8 @@
   <data name="DriverLogic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DriverLogic.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="Navigate" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Navigate.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
   <data name="ObjectLists" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ObjectLists.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
-  </data>
-  <data name="RandomLocation" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RandomLocation.cs;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="String1" xml:space="preserve">
     <value />

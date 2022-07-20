@@ -168,33 +168,6 @@ namespace TestingProject.Properties {
         ///using OpenQA.Selenium;
         ///using OpenQA.Selenium.Chrome;
         ///using OpenQA.Selenium.Interactions;
-        ///
-        ///namespace Selenium
-        ///{
-        ///    public class Navigate : BaseComponent
-        ///    {
-        ///        public Navigate(IBrowsers driver) : base(driver) { }
-        ///        public void Nav(string URL) 
-        ///        {
-        ///            driver.CurrentDriver().Navigate().GoToUrl(URL);
-        ///        }
-        ///
-        ///    }
-        ///}
-        ///.
-        /// </summary>
-        internal static string Navigate {
-            get {
-                return ResourceManager.GetString("Navigate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to using System;
-        ///using Microsoft.VisualStudio.TestTools.UnitTesting;
-        ///using OpenQA.Selenium;
-        ///using OpenQA.Selenium.Chrome;
-        ///using OpenQA.Selenium.Interactions;
         ///using System.Collections.Generic;
         ///using Microsoft.Office.Interop.Excel;
         ///
@@ -209,29 +182,6 @@ namespace TestingProject.Properties {
         internal static string ObjectLists {
             get {
                 return ResourceManager.GetString("ObjectLists", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to using System;
-        ///using System.Collections.Generic;
-        ///
-        ///namespace Selenium
-        ///{
-        ///    public class RandomLocation
-        ///    {
-        ///        Random rand = new Random();
-        ///        //public string[] _randomList = new string[5]; 
-        ///        public List&lt;string&gt; _randomList = new List&lt;string&gt;();
-        ///
-        ///        public RandomLocation() //constructor, but a more classic usage
-        ///        {
-        ///            _randomList[0] = Constants.Names[rand.Next(0, Constants.Names.Length)];
-        ///            _randomList[1] = Constants.Address1[rand.Next(0, Constants.Ad [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string RandomLocation {
-            get {
-                return ResourceManager.GetString("RandomLocation", resourceCulture);
             }
         }
         

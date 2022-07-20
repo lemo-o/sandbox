@@ -37,6 +37,7 @@ namespace Selenium
             TLpage.Weight();
             TLpage.MileageEngine();
             TLpage.Method();
+            TLpage.CreateLoadButton();
         }
     }
 }
