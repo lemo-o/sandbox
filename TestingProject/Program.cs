@@ -10,7 +10,7 @@ namespace Selenium
     {
         static void Main(string[] args)
         {
-            new LoadCreator();      
+            new LoadCreator();
         }
     }
 }
