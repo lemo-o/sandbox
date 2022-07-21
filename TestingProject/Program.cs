@@ -8,7 +8,7 @@ namespace Selenium
 {
     class Working
     {
-        static void Main(string[] args)
+        private static void Main()
         {
             IBrowsers driver = new Driver();
             new Login(driver);
