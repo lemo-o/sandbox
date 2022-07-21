@@ -103,24 +103,10 @@ namespace Selenium
             Components _component = new Components(driver, By.XPath($"//div[6]/div[2]//div[1]/div/select/option[{input+2}]")); 
             _component.Click();
         }
-        public void Method(int input)  //o is practical, 1 is shortest, 2 is national
+        public void Method(int input)  //0 is practical, 1 is shortest, 2 is national
         {
-            Components _component;
-            switch (input)
-            {
-                case 0:
-                    _component = new Components(driver, By.XPath("//div[6]//div[2]/div/select/option[2]")); //practical
-                    _component.Click();
-                    break;
-                case 1:
-                    _component = new Components(driver, By.XPath("//div[6]//div[2]/div/select/option[3]")); //shortest
-                    _component.Click();
-                    break;
-                case 2:
-                    _component = new Components(driver, By.XPath("//div[6]//div[2]/div/select/option[4]")); //national
-                    _component.Click();
-                    break;
-            }
+            Components _component = new Components(driver, By.XPath($"//div[6]//div[2]/div/select/option[{input + 2}]"));
+            _component.Click();
         }
         public void CreateLoadButton() 
         {

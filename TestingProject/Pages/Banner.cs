@@ -33,43 +33,5 @@ namespace Selenium
         public void OfficeConfigClick() =>  BannerButtons(1, 4);
         public void DoeFuelPricesClick() => BannerButtons(1, 5);
         public void CreateTLClick() => BannerButtons(3, 2);
-
-
-        private static readonly By[][] _bannerBy =
-        {
-            new By[] {
-                By.XPath("//div[3]/ul/li[1]"),//Home button
-                By.XPath("//li[1]/ul/li[1]"), //Reports
-                By.XPath("//li[1]/ul/li[2]"), //Dashboards
-                By.XPath("//li[1]/ul/li[3]"), //Run Miles
-                By.XPath("//li[1]/ul/li[4]"), //Office Config
-                By.XPath("//li[1]/ul/li[5]")  //DoE Fuel Prices
-            }, //6
-
-            new By[] {
-                By.XPath("//div[3]/ul/li[2]"),//Customers
-                By.XPath("//li[2]/ul/li[1]"), //Search
-                By.XPath("//li[2]/ul/li[2]"), //Leads
-                By.XPath("//li[2]/ul/li[3]"), //Active
-                By.XPath("//li[2]/ul/li[4]"), //New Lead
-                By.XPath("//li[2]/ul/li[5]"), //Quotes
-                By.XPath("//li[2]/ul/li[6]"), //Notes Search
-                By.XPath("//li[2]/ul/li[7]"), //Billing Queue
-                By.XPath("//li[2]/ul/li[8]")  //Invoice Queue
-            }, //9
-
-            new By[] {
-                By.XPath("//div[3]/ul/li[3]"),//Loads
-                By.XPath("//li[3]/ul/li[1]"), //Search
-                By.XPath("//li[3]/ul/li[2]"), //Create TL
-                By.XPath("//li[3]/ul/li[3]"), //Quotes
-                By.XPath("//li[3]/ul/li[4]"), //Templates
-                By.XPath("//li[3]/ul/li[5]"), //Active 
-                By.XPath("//li[3]/ul/li[6]"), //Working
-                By.XPath("//li[3]/ul/li[7]"), //Deliv Final
-                By.XPath("//li[3]/ul/li[8]"), //Invoiced
-                By.XPath("//li[3]/ul/li[9]")  //Batch Import
-            }
-        };
     }
 }
