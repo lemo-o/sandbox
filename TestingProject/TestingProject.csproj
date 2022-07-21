@@ -92,12 +92,12 @@
     </Compile>
     <Compile Include="Pages\Banner.cs" />
     <Compile Include="Resources\Components.cs" />
-    <Compile Include="Resources\ObjectLists.cs" />
     <Compile Include="Resources\Constants.cs" />
     <Compile Include="Resources\DriverLogic.cs" />
     <Compile Include="Pages\LoginPage.cs" />
     <Compile Include="Resources\BaseComponent.cs" />
     <Compile Include="Tests\BannerButtons.cs" />
+    <Compile Include="Tests\Login.cs" />
     <Compile Include="Tests\LoadCreator.cs" />
   </ItemGroup>
   <ItemGroup>

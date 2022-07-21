@@ -8,7 +8,7 @@ namespace Selenium //my next step is to change most of these to have correct pri
     public class BaseComponent
     {
         private protected IBrowsers driver { get; set; }
-        private protected By locator { get; set; } //-look up how this works, future me! ~~~ Future me says that this is the start of a property that you're not using. 
+        private protected By locator { get; set; }
 
         public IBrowsers Driver
         {
@@ -25,7 +25,7 @@ namespace Selenium //my next step is to change most of these to have correct pri
 
         public BaseComponent(IBrowsers driver, By locater)
         {
-            this.locator = locater;
+            locator = locater;
             this.driver = driver;
         }
         protected internal IWebElement FindElement() => WaitForElement();

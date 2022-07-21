@@ -71,9 +71,15 @@ namespace TestingProject.Properties {
         ///    public class BaseComponent
         ///    {
         ///        private protected IBrowsers driver { get; set; }
-        ///        private protected By locator { get; set; } //-look up how this works, future me! ~~~ Future me says that this is the start of a property that you&apos;re not using. 
+        ///        private protected By locator { get; set; }
         ///
-        ///        public IBr [rest of string was truncated]&quot;;.
+        ///        public IBrowsers Driver
+        ///        {
+        ///            get { return driver; }
+        ///            set { driver = value; }
+        ///        }
+        ///
+        ///       [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string BaseComponent {
             get {
@@ -159,29 +165,6 @@ namespace TestingProject.Properties {
         internal static string DriverLogic {
             get {
                 return ResourceManager.GetString("DriverLogic", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to using System;
-        ///using Microsoft.VisualStudio.TestTools.UnitTesting;
-        ///using OpenQA.Selenium;
-        ///using OpenQA.Selenium.Chrome;
-        ///using OpenQA.Selenium.Interactions;
-        ///using System.Collections.Generic;
-        ///using Microsoft.Office.Interop.Excel;
-        ///
-        ///namespace Selenium
-        ///{
-        ///    //this should probably be changed to use inheritance (maybe an interface?) Proof of concept for now
-        ///    //This used to be two lists; one for textboxes and one for buttons.
-        ///    public class ComponentList
-        ///    {
-        ///        private List&lt;(Components com [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string ObjectLists {
-            get {
-                return ResourceManager.GetString("ObjectLists", resourceCulture);
             }
         }
         

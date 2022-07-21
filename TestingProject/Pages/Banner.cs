@@ -9,42 +9,30 @@ namespace Selenium
 {
     public class Banner : BaseComponent 
     {
-        //private TextBoxList textboxes = new TextBoxList();
-        //private ButtonList buttons = new ButtonList();
-        private ComponentList components = new ComponentList();
-        public Banner(IBrowsers driver) : base(driver)
+
+        public Banner(IBrowsers driver) : base(driver) { }
+
+        private void BannerButtons(int header) //starts at 1
         {
-            for (int g = 0; g < _bannerBy.Length; g++)
-            {
-                for (int i = 0; i < _bannerBy[g].Length; i++)
-                {
-                    components.CurrentComponentList.Add((new Components(driver, _bannerBy[g][i]), _bannerString[g][i]));
-                }
-            }
+            Components _component = new Components(driver, By.XPath($"//div[3]/ul/li[{header}]"));
+            _component.Click();
+        }
+        private void BannerButtons(int header, int dropdown) //starts at 1
+        { 
+            Components _component = new Components(driver, By.XPath($"//div[3]/ul/li[{header}]"));
+            _component.Hover();
+            _component = new Components(driver, By.XPath($"//li[{header}]/ul/li[{dropdown}]"));
+            _component.Click();
         }
 
-        private void BannerDropdown(int banner, int index)
-        {
-            //buttons.CurrentButtonList.Single(input); //here's the idea - using LINQ to search the index part of the list to return whatever button you need quickly and easily
-            //i just can't make it work so right now it's just janky, 
-
-            Components _currentButton = new Components(driver, _bannerBy[banner][0]);
-            _currentButton.Hover();
-            components.CurrentComponentList[index].component.Click();
-
-            //new Hover(driver, _bannerBy[mainButton][0]); 
-            //buttons.CurrentButtonList[mainButton * subMenu].button.Click();
-
-        }
-
-        //public void HomeButtonClick() => buttons.CurrentButtonList[0].button.Click();
-        public void ReportsClick() =>       BannerDropdown(0, 1);
-        //public void DashboardsClick() =>    //BannerDropdown(0, 2);
-        //public void RunMilesClick() =>      //BannerDropdown(0, 3);
-        //public void OfficeConfigClick() =>  //BannerDropdown(0, 4);
-        //public void DoeFuelPricesClick() => //BannerDropdown(0, 5);
-
-        public void CreateTLClick() => BannerDropdown(2, 17);
+        public void HomeNavigation() => driver.CurrentDriver().Navigate().GoToUrl(Constants.URLs[2]);
+        public void HomeButtonClick() => BannerButtons(1); 
+        public void ReportsClick() =>       BannerButtons(1, 1);
+        public void DashboardsClick() =>    BannerButtons(1, 2);
+        public void RunMilesClick() =>      BannerButtons(1, 3);
+        public void OfficeConfigClick() =>  BannerButtons(1, 4);
+        public void DoeFuelPricesClick() => BannerButtons(1, 5);
+        public void CreateTLClick() => BannerButtons(3, 2);
 
 
         private static readonly By[][] _bannerBy =
@@ -83,56 +71,5 @@ namespace Selenium
                 By.XPath("//li[3]/ul/li[9]")  //Batch Import
             }
         };
-
-        private static readonly string[][] _bannerString =
-        {
-            new string[] {
-                "Home button    ",
-                "Reports        ",
-                "Dashboards     ",
-                "Run Miles      ",
-                "Office Config  ",
-                "DoE Fuel Prices"
-            },
-            new string[]{
-                "Customers    ",
-                "Search       ",
-                "Leads        ",
-                "Active       ",
-                "New Lead     ",
-                "Quotes       ",
-                "Notes Search ",
-                "Billing Queue",
-                "Invoice Queue"
-            },
-            new string[]{
-                "Loads"    ,
-                "Search"   ,
-                "Create TL",
-                "Quotes"   ,
-                "Templates",
-                "Active     ",
-                "Working    ",
-                "Deliv Final",
-                "Invoiced   ",
-                "Batch Import"
-            }
-
-        };
-
-        public static int[] BannerArrayLengths =
-        {
-            _bannerBy[0].Length,
-            _bannerBy[1].Length,
-            _bannerBy[2].Length
-        }; 
-
-   
-
-
-
-
-
-
     }
 }

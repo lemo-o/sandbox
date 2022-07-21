@@ -10,7 +10,11 @@ namespace Selenium
     {
         static void Main(string[] args)
         {
-            new LoadCreator();      
+            IBrowsers driver = new Driver();
+            new Login(driver);
+            Banner bannerButtons = new Banner(driver);
+            bannerButtons.CreateTLClick();
+            new LoadCreator(driver);      
         }
     }
 }

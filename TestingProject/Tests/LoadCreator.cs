@@ -8,35 +8,28 @@ namespace Selenium
 {
     public class LoadCreator
     {
-        public LoadCreator()
+        public LoadCreator(IBrowsers driver)
         {
-            IBrowsers driver = new Driver();
-            var loginPage = new LoginPage(driver);
-            loginPage.Navigation();
-            loginPage.UsernameFill(Constants.Usernames[0]);
-            loginPage.PasswordFill(Constants.Passwords[0]);
-            loginPage.LoginButton();
-            var banner = new Banner(driver);
-            banner.CreateTLClick();
+            Random rand = new Random();
             var TLpage = new CreateTL(driver);
-            TLpage.CustomerField();
-            TLpage.ShipperName();
-            TLpage.ShipperAddress1();
-            TLpage.ShipperAddress2();
-            TLpage.ShipperZIP();
-            TLpage.ShipperEarliestDate();
-            TLpage.ConsigneeName();
-            TLpage.ConsigneeAddress1();
-            TLpage.ConsigneeAddress2();
-            TLpage.ConsigneeZIP();
-            TLpage.ConsigneeEarliestDate();
-            TLpage.Quantity();
+            TLpage.CustomerFieldButton();
+            TLpage.ShipperName(Constants.Names[rand.Next(0, Constants.Names.Length)]);
+            TLpage.ShipperAddress1(Constants.Address1[rand.Next(0, Constants.Address1.Length)]);
+            TLpage.ShipperAddress2(Constants.Address2[rand.Next(0, Constants.Address2.Length)]);
+            TLpage.ShipperZIP(Constants.CityBlocks[rand.Next(0, 1)][5]);
+            TLpage.ShipperEarliestDate(DateTime.Now.ToString("M/d/yyyy"));
+            TLpage.ConsigneeName(Constants.Names[rand.Next(0, Constants.Names.Length)]);
+            TLpage.ConsigneeAddress1(Constants.Address1[rand.Next(0, Constants.Address1.Length)]);
+            TLpage.ConsigneeAddress2(Constants.Address2[rand.Next(0, Constants.Address2.Length)]);
+            TLpage.ConsigneeZIP(Constants.CityBlocks[rand.Next(0, 1)][5]);
+            TLpage.ConsigneeEarliestDate(DateTime.Now.ToString("M/d/yyyy"));
+            TLpage.Quantity(rand.Next(0, 10).ToString());
             TLpage.UnitOfMeasurement();
-            TLpage.Description();
+            TLpage.Description("stuff");
             TLpage.EquipmentType();
-            TLpage.Weight();
-            TLpage.MileageEngine();
-            TLpage.Method();
+            TLpage.Weight(rand.Next(0, 150000).ToString());
+            TLpage.MileageEngine(0);
+            TLpage.Method(0);
             TLpage.CreateLoadButton();
         }
     }
