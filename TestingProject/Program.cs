@@ -12,9 +12,7 @@ namespace Selenium
         {
             IBrowsers driver = new Driver();
             new Login(driver);
-            Banner bannerButtons = new Banner(driver);
-            bannerButtons.CreateTLClick();
-            new LoadCreator(driver);      
+            new BannerButtons(driver);
         }
     }
 }

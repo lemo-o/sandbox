@@ -11,7 +11,7 @@ namespace Selenium
         public Login(IBrowsers driver)
         {
             var loginPage = new LoginPage(driver);
-            loginPage.Navigation(0);
+            loginPage.Navigation(1);
             loginPage.UsernameFill(Constants.Usernames[0]);
             loginPage.PasswordFill(Constants.Passwords[0]);
             loginPage.LoginButton();

@@ -10,20 +10,33 @@ namespace Selenium
     {
         public BannerButtons(IBrowsers driver)
         {
-            //this navigation needs to be fixed.
             var banner = new Banner(driver);
-            banner.HomeButtonClick();
-            banner.HomeNavigation();
-            banner.ReportsClick();
-            banner.HomeNavigation();
-            banner.DashboardsClick();
-            banner.HomeNavigation();
-            banner.RunMilesClick();
-            banner.HomeNavigation();
-            banner.OfficeConfigClick();
-            banner.HomeNavigation();
-            banner.DoeFuelPricesClick();
-            banner.HomeNavigation();
+            //for (int i = 1; i <= 7; i++) //Every header button
+            //{
+            //    banner.BannerButtons(i);
+            //}
+            for (int g = 1; g <= 7; g++)
+            {
+                for (int b = 1; b <= 20; b++)
+                {
+                    try
+                    {
+                        banner.BannerButtons(g, b);
+                        banner.HomeNavigation();
+                    }
+                    catch
+                    {
+                        b = 1;
+                        g++;
+                        banner.BannerButtons(g, b);
+                        banner.HomeNavigation();
+                    }
+                    finally
+                    {
+                        //test if correct page
+                    }
+                }
+            }
         }
     }
 }

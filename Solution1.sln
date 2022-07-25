@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32602.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingProject", "TestingProject\TestingProject.csproj", "{67AF84DE-A6CD-4EAB-BBB8-341520FC17A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selenium", "TestingProject\Selenium.csproj", "{67AF84DE-A6CD-4EAB-BBB8-341520FC17A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Specy", "Specy\Specy.csproj", "{BD9DA835-BEF1-40BF-B7AF-AF72F4A57029}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{67AF84DE-A6CD-4EAB-BBB8-341520FC17A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67AF84DE-A6CD-4EAB-BBB8-341520FC17A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67AF84DE-A6CD-4EAB-BBB8-341520FC17A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD9DA835-BEF1-40BF-B7AF-AF72F4A57029}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD9DA835-BEF1-40BF-B7AF-AF72F4A57029}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD9DA835-BEF1-40BF-B7AF-AF72F4A57029}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD9DA835-BEF1-40BF-B7AF-AF72F4A57029}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
